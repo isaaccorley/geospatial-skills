@@ -1,19 +1,20 @@
 # Install
 
-## Manual
+## Universal
 
-Copy a skill directory into your agent's local skills folder.
+Clone this repo and copy the portable skill source:
 
 ```bash
 git clone https://github.com/isaaccorley/geospatial-skills.git
 cp -R geospatial-skills/skills/geoparquet ~/.claude/skills/geoparquet
 ```
 
-If your tool uses a different skill directory, copy the same folder there.
+If your tool uses a different local skill folder, copy the same `skills/geoparquet`
+directory there instead.
 
-## Claude Code / Cowork
+## Claude
 
-This repo now ships its own marketplace metadata:
+This repo also ships a Claude marketplace adapter:
 
 ```bash
 /plugin marketplace add isaaccorley/geospatial-skills
@@ -30,6 +31,6 @@ claude plugin install geoparquet@geospatial-skills
 ## Local docs
 
 ```bash
-uv sync
+uv sync --group dev
 uv run mkdocs serve
 ```

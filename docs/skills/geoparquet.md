@@ -1,30 +1,29 @@
 # GeoParquet
 
-Guide agents through GeoParquet workflows: create, optimize, validate, and
-distribute cloud-native geospatial vector data.
+Create, optimize, validate, and distribute cloud-native geospatial vector data.
 
 <div class="skill-callout">
-  <p class="skill-callout-label">Primary tools</p>
-  <p><code>gpio</code> first. DuckDB for heavier SQL and geometry work.</p>
+  <p class="skill-callout-label">Tools</p>
+  <p><code>gpio</code> first. DuckDB for heavier SQL.</p>
 </div>
 
 ## Install
 
-### Manual
+### Universal
 
 ```bash
 git clone https://github.com/isaaccorley/geospatial-skills.git
 cp -R geospatial-skills/skills/geoparquet ~/.claude/skills/geoparquet
 ```
 
-### Claude Code
+### Claude
 
 ```bash
 /plugin marketplace add isaaccorley/geospatial-skills
 /plugin install geoparquet@geospatial-skills
 ```
 
-### Claude Cowork CLI
+CLI:
 
 ```bash
 claude plugin marketplace add isaaccorley/geospatial-skills
@@ -54,12 +53,11 @@ gpio --version
 
 ## Workflow
 
-1. Understand source format, location, service type, and scale.
-1. Inspect schema, geometry type, CRS, and size.
+1. Inspect source format, CRS, geometry type, and size.
 1. Convert with GeoParquet defaults.
 1. Validate output.
-1. Optimize row groups, sorting, and partitioning when datasets get large.
-1. Publish with STAC metadata and cloud upload as needed.
+1. Optimize sorting, row groups, and partitioning if the dataset is large.
+1. Publish with STAC metadata when needed.
 
 ## Essential commands
 

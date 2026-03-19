@@ -21,7 +21,7 @@
         "cloud-native"
       ],
       "name": "geoparquet",
-      "source": "./",
+      "source": "./plugins/geoparquet",
       "version": "0.1.0"
     }
   ]

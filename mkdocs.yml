@@ -10,18 +10,9 @@ theme:
   logo: null
   favicon: null
   palette:
-    - scheme: default
-      primary: black
-      accent: lime
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
     - scheme: slate
       primary: black
       accent: lime
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
   features:
     - navigation.instant
     - navigation.sections
