@@ -13,27 +13,22 @@ distribute cloud-native geospatial vector data.
 ### Manual
 
 ```bash
-cp -R skills/geoparquet ~/.claude/skills/geoparquet
-```
-
-### OpenSkills
-
-```bash
-npx openskills install geoparquet-io/geoparquet-skill
+git clone https://github.com/isaaccorley/geospatial-skills.git
+cp -R geospatial-skills/skills/geoparquet ~/.claude/skills/geoparquet
 ```
 
 ### Claude Code
 
 ```bash
-/plugin marketplace add geoparquet-io/geoparquet-skill
-/plugin install geoparquet@geoparquet-skill
+/plugin marketplace add isaaccorley/geospatial-skills
+/plugin install geoparquet@geospatial-skills
 ```
 
 ### Claude Cowork CLI
 
 ```bash
-claude plugin marketplace add geoparquet-io/geoparquet-skill
-claude plugin install geoparquet@geoparquet-skill
+claude plugin marketplace add isaaccorley/geospatial-skills
+claude plugin install geoparquet@geospatial-skills
 ```
 
 ## Prerequisites

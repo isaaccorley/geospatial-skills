@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "description": "Installable geospatial skills for Claude Code and other AI agents",
+    "version": "0.1.0"
+  },
+  "name": "geospatial-skills",
+  "owner": {
+    "name": "Isaac Corley"
+  },
+  "plugins": [
+    {
+      "description": "This skill should be used when working with GeoParquet files - the cloud-native format for geospatial vector data. Covers best practices for creating, optimizing, and distributing GeoParquet using gpio CLI and DuckDB.",
+      "keywords": [
+        "geoparquet",
+        "geospatial",
+        "parquet",
+        "gis",
+        "spatial-data",
+        "gpio",
+        "duckdb",
+        "cloud-native"
+      ],
+      "name": "geoparquet",
+      "source": "./",
+      "version": "0.1.0"
+    }
+  ]
+}
