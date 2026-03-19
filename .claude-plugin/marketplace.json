@@ -23,6 +23,21 @@
       "name": "geoparquet",
       "source": "./plugins/geoparquet",
       "version": "0.1.0"
+    },
+    {
+      "description": "This skill should be used when working with GDAL command line tools for raster and vector geospatial processing. Covers inspection, reprojection, clipping, raster conversion, mosaics, tiling, rasterization, and COG creation.",
+      "keywords": [
+        "gdal",
+        "ogr2ogr",
+        "raster",
+        "vector",
+        "geospatial",
+        "geotiff",
+        "cog"
+      ],
+      "name": "gdal",
+      "source": "./plugins/gdal",
+      "version": "0.1.0"
     }
   ]
 }

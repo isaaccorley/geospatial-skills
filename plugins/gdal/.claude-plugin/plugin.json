@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "This skill should be used when working with GDAL command line tools for raster and vector geospatial processing. Covers inspection, reprojection, clipping, raster conversion, mosaics, tiling, rasterization, and COG creation.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "gdal",
+    "ogr2ogr",
+    "raster",
+    "vector",
+    "geospatial",
+    "geotiff",
+    "cog"
+  ],
+  "license": "Apache-2.0",
+  "name": "gdal",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}
