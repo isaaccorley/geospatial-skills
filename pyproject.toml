@@ -3,12 +3,10 @@ name = "geospatial-skills"
 version = "0.1.0"
 description = "Installable geospatial AI skills with docs"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
@@ -26,7 +24,7 @@ dev = [
 ]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py313"
 line-length = 100
 force-exclude = true
 
