@@ -1,6 +1,6 @@
-# GeoParquet
+# GeoParquet Validation
 
-Create, optimize, validate, and distribute cloud-native geospatial vector data.
+Inspect, validate, optimize, and distribute GeoParquet data with `gpio`.
 
 <div class="skill-callout">
   <p class="skill-callout-label">Tools</p>
@@ -12,22 +12,21 @@ Create, optimize, validate, and distribute cloud-native geospatial vector data.
 ### Universal
 
 ```bash
-git clone https://github.com/isaaccorley/geospatial-skills.git
-cp -R geospatial-skills/skills/geoparquet ~/.claude/skills/geoparquet
+cp -R skills/geoparquet-validation ~/.agent/skills/geoparquet-validation
 ```
 
 ### Claude
 
 ```bash
 /plugin marketplace add isaaccorley/geospatial-skills
-/plugin install geoparquet@geospatial-skills
+/plugin install geoparquet-validation@geospatial-skills
 ```
 
 CLI:
 
 ```bash
 claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install geoparquet@geospatial-skills
+claude plugin install geoparquet-validation@geospatial-skills
 ```
 
 ## Prerequisites
@@ -94,7 +93,8 @@ gpio publish stac <input> <output.json>
 
 ## Source
 
-- Skill: [skills/geoparquet/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet/SKILL.md)
-- Command reference: [skills/geoparquet/references/gpio-commands.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet/references/gpio-commands.md)
-- Best practices: [skills/geoparquet/references/distribution-best-practices.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet/references/distribution-best-practices.md)
-- Tool comparison: [skills/geoparquet/references/tool-comparison.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet/references/tool-comparison.md)
+- Skill: [skills/geoparquet-validation/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/SKILL.md)
+- Command reference: [skills/geoparquet-validation/references/gpio-commands.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/gpio-commands.md)
+- Best practices: [skills/geoparquet-validation/references/distribution-best-practices.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/distribution-best-practices.md)
+- Tool comparison: [skills/geoparquet-validation/references/tool-comparison.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/tool-comparison.md)
+- Upstream reference: [geoparquet-io/geoparquet-skill](https://github.com/geoparquet-io/geoparquet-skill)

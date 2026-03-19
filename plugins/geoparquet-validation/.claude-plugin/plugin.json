@@ -1,0 +1,19 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "This skill should be used when working with gpio for GeoParquet inspection, validation, optimization, and distribution. Covers GeoParquet best practices using gpio CLI and DuckDB.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "geoparquet",
+    "validation",
+    "geospatial",
+    "parquet",
+    "gpio",
+    "duckdb"
+  ],
+  "license": "Apache-2.0",
+  "name": "geoparquet-validation",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

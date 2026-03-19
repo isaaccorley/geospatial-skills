@@ -44,4 +44,5 @@ nav:
   - Home: index.md
   - Skills:
       - GDAL: skills/gdal.md
-      - GeoParquet: skills/geoparquet.md
+      - GeoParquet Validation: skills/geoparquet-validation.md
+      - Tessera: skills/tessera.md

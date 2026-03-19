@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "This skill should be used when downloading Tessera embeddings with the geotessera CLI. Covers coverage inspection, bbox and region downloads, GeoTIFF vs NPY export, band selection, registry configuration, cache behavior, and local visualization.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "tessera",
+    "geotessera",
+    "embeddings",
+    "download",
+    "geospatial",
+    "geotiff",
+    "numpy"
+  ],
+  "license": "Apache-2.0",
+  "name": "tessera",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

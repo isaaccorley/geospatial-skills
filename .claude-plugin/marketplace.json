@@ -9,9 +9,10 @@
   },
   "plugins": [
     {
-      "description": "This skill should be used when working with GeoParquet files - the cloud-native format for geospatial vector data. Covers best practices for creating, optimizing, and distributing GeoParquet using gpio CLI and DuckDB.",
+      "description": "This skill should be used when working with gpio for GeoParquet inspection, validation, optimization, and distribution. Covers GeoParquet best practices using gpio CLI and DuckDB.",
       "keywords": [
         "geoparquet",
+        "validation",
         "geospatial",
         "parquet",
         "gis",
@@ -20,8 +21,8 @@
         "duckdb",
         "cloud-native"
       ],
-      "name": "geoparquet",
-      "source": "./plugins/geoparquet",
+      "name": "geoparquet-validation",
+      "source": "./plugins/geoparquet-validation",
       "version": "0.1.0"
     },
     {
@@ -37,6 +38,21 @@
       ],
       "name": "gdal",
       "source": "./plugins/gdal",
+      "version": "0.1.0"
+    },
+    {
+      "description": "This skill should be used when downloading Tessera embeddings with the geotessera CLI. Covers coverage inspection, bbox and region downloads, GeoTIFF vs NPY export, band selection, registry configuration, cache behavior, and local visualization.",
+      "keywords": [
+        "tessera",
+        "geotessera",
+        "embeddings",
+        "download",
+        "geospatial",
+        "geotiff",
+        "numpy"
+      ],
+      "name": "tessera",
+      "source": "./plugins/tessera",
       "version": "0.1.0"
     }
   ]

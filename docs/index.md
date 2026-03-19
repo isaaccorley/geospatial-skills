@@ -5,7 +5,7 @@
     Minimal docs. Shared source. Claude packaging when needed.
   </p>
   <div class="hero-actions">
-    <a class="hero-button" href="skills/geoparquet/">Open GeoParquet</a>
+    <a class="hero-button" href="#catalog">Browse Skills</a>
     <a class="hero-link" href="#install">Install</a>
   </div>
 </section>
@@ -15,11 +15,10 @@
 ### Universal
 
 ```bash
-git clone https://github.com/isaaccorley/geospatial-skills.git
-cp -R geospatial-skills/skills/<skill-name> ~/.claude/skills/<skill-name>
+cp -R skills/<skill-name> ~/.agent/skills/<skill-name>
 ```
 
-If your tool uses a different local skill folder, copy the matching
+If your setup uses a different shared skill folder, copy the matching
 `skills/<skill-name>` directory there instead.
 
 ### Claude
@@ -36,7 +35,8 @@ claude plugin marketplace add isaaccorley/geospatial-skills
 claude plugin install <skill-name>@geospatial-skills
 ```
 
-## Catalog
+## Catalog { #catalog }
 
-- [`geoparquet`](skills/geoparquet.md): GeoParquet workflows with `gpio` and DuckDB
-- [`gdal`](skills/gdal.md): GDAL command line workflows for raster and vector data
+- [`geoparquet-validation`](skills/geoparquet-validation.md): `gpio`-focused GeoParquet validation, optimization, and distribution workflows. Referenced from `geoparquet-io/geoparquet-skill`.
+- [`gdal`](skills/gdal.md): GDAL command line workflows for raster and vector data. Referenced from Microsoft AI for Earth geospatial recipes.
+- [`tessera`](skills/tessera.md): Download Tessera embeddings with the `geotessera` CLI. Referenced from `ucam-eo/geotessera`.

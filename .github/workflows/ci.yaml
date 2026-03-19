@@ -36,3 +36,12 @@ jobs:
         run: uv sync --group dev
       - name: Build docs
         run: uv run mkdocs build --strict
+
+  universal-install:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - name: Smoke test universal installs
+        run: bash scripts/test-universal-install.sh

@@ -12,8 +12,7 @@ General GDAL command line workflows for raster and vector geospatial processing.
 ### Universal
 
 ```bash
-git clone https://github.com/isaaccorley/geospatial-skills.git
-cp -R geospatial-skills/skills/gdal ~/.claude/skills/gdal
+cp -R skills/gdal ~/.agent/skills/gdal
 ```
 
 ### Claude
@@ -55,3 +54,4 @@ gdal2tiles.py -z 10-16 INPUT_BYTE.tif OUTPUT/
 
 - Skill: [skills/gdal/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/gdal/SKILL.md)
 - Recipes: [skills/gdal/references/gdal-recipes.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/gdal/references/gdal-recipes.md)
+- Upstream reference: [microsoft/ai4eutils geospatial recipes](https://github.com/microsoft/ai4eutils/blob/master/geospatial/recipes_and_guides/geospatial_recipes.md)
