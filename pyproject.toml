@@ -1,0 +1,94 @@
+[project]
+name = "geospatial-skills"
+version = "0.1.0"
+description = "Installable geospatial AI skills with docs"
+readme = "README.md"
+requires-python = ">=3.11"
+
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+
+[dependency-groups]
+dev = [
+  "mkdocs>=1.6.1",
+  "mkdocs-material>=9.7.6",
+  "pre-commit>=4.3",
+  "pymdown-extensions>=10.15",
+  "pytest>=8.4.2",
+  "pytest-cov>=7",
+  "ruff>=0.14.1",
+  "ty>=0.0.1a23",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+force-exclude = true
+
+lint.extend-select = [
+  "ANN",
+  "B",
+  "C4",
+  "EXE",
+  "FA",
+  "FLY",
+  "FURB",
+  "G",
+  "I",
+  "ISC",
+  "LOG",
+  "PERF",
+  "PGH",
+  "PIE",
+  "PT",
+  "PYI",
+  "RET",
+  "RSE",
+  "RUF",
+  "SIM",
+  "SLOT",
+  "TCH",
+  "TRY",
+  "UP",
+  "W",
+]
+lint.ignore = [
+  "ANN401",
+  "COM812",
+  "COM819",
+  "D206",
+  "D300",
+  "E111",
+  "E114",
+  "E117",
+  "PT011",
+  "PT012",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "RET505",
+  "RET506",
+  "RUF005",
+  "SIM108",
+  "TRY003",
+  "W191",
+]
+lint.per-file-ignores."tests/**" = [
+  "ANN001",
+  "ANN201",
+  "RUF029",
+  "SIM117",
+  "SIM300",
+]
+
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
+
+[tool.uv]
+package = false

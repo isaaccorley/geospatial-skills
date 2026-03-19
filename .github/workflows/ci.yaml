@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7.1
+        with:
+          enable-cache: true
+      - name: Sync dev environment
+        run: uv sync --group dev
+      - name: Run pre-commit
+        run: uv run pre-commit run --all-files -v
+
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7.1
+        with:
+          enable-cache: true
+      - name: Sync dev environment
+        run: uv sync --group dev
+      - name: Build docs
+        run: uv run mkdocs build --strict
