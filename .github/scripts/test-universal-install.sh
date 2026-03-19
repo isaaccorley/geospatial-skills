@@ -37,12 +37,12 @@ for skill_dir in "${skills[@]}"; do
     exit 1
   fi
 
-  if ! rg -q '^name:\s+[a-z0-9-]+$' "$skill_file"; then
+  if ! grep -Eq '^name:[[:space:]]+[a-z0-9-]+$' "$skill_file"; then
     echo "Missing or invalid name field in $skill_file"
     exit 1
   fi
 
-  if ! rg -q '^description:\s+.+' "$skill_file"; then
+  if ! grep -Eq '^description:[[:space:]]+.+' "$skill_file"; then
     echo "Missing description field in $skill_file"
     exit 1
   fi
@@ -56,4 +56,3 @@ for skill_dir in "${skills[@]}"; do
 done
 
 echo "Universal install smoke test passed"
-

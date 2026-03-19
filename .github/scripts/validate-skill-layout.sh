@@ -20,12 +20,12 @@ for skill_dir in skills/*; do
   [[ -f "$plugin_skill" ]] || { echo "missing plugin skill for $skill_name"; exit 1; }
   [[ -f "$docs_page" ]] || { echo "missing docs page for $skill_name"; exit 1; }
 
-  rg -q "^name:\s+$skill_name$" "$skill_dir/SKILL.md" || {
+  grep -Eq "^name:[[:space:]]+$skill_name$" "$skill_dir/SKILL.md" || {
     echo "portable SKILL name mismatch for $skill_name"
     exit 1
   }
 
-  rg -q "^name:\s+$skill_name$" "$plugin_skill" || {
+  grep -Eq "^name:[[:space:]]+$skill_name$" "$plugin_skill" || {
     echo "plugin SKILL name mismatch for $skill_name"
     exit 1
   }
@@ -51,4 +51,3 @@ done
 
 [[ "$skills_ok" -eq 1 ]] || { echo "no skills validated"; exit 1; }
 echo "Skill layout validation passed"
-
