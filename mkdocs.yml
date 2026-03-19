@@ -1,0 +1,48 @@
+site_name: geospatial-skills
+site_url: https://isaac.earth/geospatial-skills/
+site_description: Installable geospatial skills for AI coding agents
+repo_url: https://github.com/isaaccorley/geospatial-skills
+repo_name: isaaccorley/geospatial-skills
+strict: true
+
+theme:
+  name: material
+  logo: null
+  favicon: null
+  palette:
+    - scheme: slate
+      primary: black
+      accent: lime
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Skills:
+      - GDAL: skills/gdal.md
+      - GeoParquet Validation: skills/geoparquet-validation.md
+      - Tessera: skills/tessera.md

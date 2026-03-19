@@ -1,0 +1,51 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.1
+    hooks:
+      - id: ruff
+        args: ["--fix", "--show-fixes"]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: sort-simple-yaml
+      - id: pretty-format-json
+      - id: debug-statements
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: requirements-txt-fixer
+
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: v2.8.0
+    hooks:
+      - id: pyproject-fmt
+
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.22
+    hooks:
+      - id: mdformat
+        exclude: '(^|/)SKILL\.md$'
+        additional_dependencies:
+          - mdformat-footnote==0.1.1
+          - mdformat-mkdocs==4.0.0
+
+  - repo: local
+    hooks:
+      - id: ty-check
+        name: ty-check
+        language: system
+        entry: uv run ty check
+        pass_filenames: false
+
+  - repo: local
+    hooks:
+      - id: uv-lock
+        name: uv-lock
+        language: system
+        entry: uv lock
+        pass_filenames: false
