@@ -34,7 +34,8 @@ uv run mkdocs build --strict
 
 ## CI
 
-- `.github/workflows/ci.yaml`: pre-commit + strict docs build on pushes to `main` and PRs
+- `.github/workflows/ci.yaml`: pre-commit + strict docs build + skill layout validation on pushes to `main` and PRs
+- `.github/workflows/universal-install.yaml`: manual `workflow_dispatch` smoke test for universal installs
 - `.github/workflows/docs-pages.yaml`: GitHub Pages build/deploy on pushes to `main`
 
 ## Pages

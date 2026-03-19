@@ -1,0 +1,15 @@
+name: Universal Install Smoke Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  universal-install:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - name: Smoke test universal installs
+        run: bash .github/scripts/test-universal-install.sh
+

@@ -37,11 +37,11 @@ jobs:
       - name: Build docs
         run: uv run mkdocs build --strict
 
-  universal-install:
+  skill-layout:
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v5
-      - name: Smoke test universal installs
-        run: bash scripts/test-universal-install.sh
+      - name: Validate skill layout
+        run: bash .github/scripts/validate-skill-layout.sh
