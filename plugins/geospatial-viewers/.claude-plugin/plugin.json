@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "This skill should be used when viewing, previewing, or inspecting geospatial files from the command line. Covers interactive raster viewing (viewtif), interactive vector viewing (viewgeom), and non-interactive terminal-inline viewing (viewinline) for GeoTIFF, Shapefile, GeoJSON, GeoPackage, GeoParquet, CSV, HDF, NetCDF, and more.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "viewtif",
+    "viewgeom",
+    "viewinline",
+    "geospatial",
+    "viewer",
+    "raster",
+    "vector",
+    "geotiff",
+    "csv"
+  ],
+  "license": "Apache-2.0",
+  "name": "geospatial-viewers",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}
