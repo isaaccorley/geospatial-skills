@@ -11,14 +11,15 @@ Three CLI tools for quick-look inspection of geospatial data. Always run them vi
 |------|---------|------|
 | **viewtif** | Interactive Qt viewer for rasters (GeoTIFF, HDF, NetCDF, FileGDB) | `uvx viewtif` |
 | **viewgeom** | Interactive Qt viewer for vector datasets | `uvx viewgeom` |
-| **viewinline** | Non-interactive terminal-inline viewer (rasters, vectors, CSV) | `uvx viewinline` |
+| **viewinline** | Non-interactive terminal-inline viewer (rasters, vectors, CSV, Parquet) | `uvx viewinline` |
 
 ## Choosing the Right Tool
 
 - **Need interactive zoom/pan/contrast?** Use `viewtif` (rasters) or `viewgeom` (vectors).
-- **Quick inline preview in iTerm2/WezTerm?** Use `viewinline` (no GUI window, renders in terminal).
-- **CSV analysis (stats, histograms, SQL)?** Use `viewinline`.
-- **Headless server / no display?** Use `viewinline` (requires iTerm2-protocol-compatible terminal).
+- **Quick inline preview in iTerm2/WezTerm/Konsole?** Use `viewinline` (no GUI window, renders in terminal).
+- **CSV/Parquet analysis (stats, histograms, SQL)?** Use `viewinline`.
+- **Vector file as table (describe, filter, sort)?** Use `viewinline --table`.
+- **Headless server / SSH / HPC?** Use `viewinline` (renders on local terminal, no X11 needed).
 
 ## Running with uvx
 
@@ -48,19 +49,39 @@ uvx viewtif image.tif --rgb 4 3 2
 uvx viewtif image.tif --vmin 280 --vmax 320
 uvx viewtif huge_raster.tif --scale 10
 
+# NetCDF / HDF
+uvx --from "viewtif[netcdf]" viewtif data.nc --subset 1 --timestep 100
+
+# FileGDB raster
+uvx viewtif "OpenFileGDB:/path/to.gdb:RasterName"
+
+# Remote files
+AWS_NO_SIGN_REQUEST=YES uvx --from "viewtif[geo]" viewtif s3://bucket/raster.tif --shapefile local.shp
+
 # Vector inspection
 uvx viewgeom boundaries.geojson
 uvx viewgeom landuse.shp --column area_sqkm
 uvx viewgeom earthquake.geojson --filter "mag > 5"
 uvx viewgeom earthquake.geojson --duckdb "SELECT * FROM data WHERE mag > 5"
+uvx viewgeom earthquake.geojson --duckdb "SELECT mag FROM data WHERE mag > 5" --save filtered.geojson
 
 # Terminal-inline preview
-uvx viewinline file.tif
 uvx viewinline file.tif --colormap
+uvx viewinline sentinel2.tif --rgb 4 3 2
 uvx viewinline boundaries.geojson --color-by population
+uvx viewinline file.nc --subset 1 --timestep 10
+
+# CSV / Parquet analysis
 uvx viewinline data.csv --describe
 uvx viewinline data.csv --hist area_km2 --bins 30
 uvx viewinline data.csv --scatter longitude latitude
+uvx viewinline data.csv --sql "SELECT State, AVG(Income) FROM data GROUP BY State"
+
+# Vector as table
+uvx viewinline counties.shp --table --describe
+uvx viewinline data.geoparquet --table --where "POP > 100000" --sort POP --desc
+
+# Image gallery
 uvx viewinline outputs/ --gallery 4x3
 ```
 
