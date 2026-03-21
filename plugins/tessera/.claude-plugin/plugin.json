@@ -2,7 +2,7 @@
   "author": {
     "name": "Isaac Corley"
   },
-  "description": "This skill should be used when downloading Tessera embeddings with the geotessera CLI. Covers coverage inspection, bbox and region downloads, GeoTIFF vs NPY export, band selection, registry configuration, cache behavior, and local visualization.",
+  "description": "Use when working with TESSERA satellite embeddings — downloading via CLI, sampling via the Python or R library, choosing between point-based and mosaic approaches, or exporting to GeoTIFF/NPY/Zarr.",
   "homepage": "https://isaac.earth/geospatial-skills/",
   "keywords": [
     "tessera",
@@ -11,7 +11,11 @@
     "download",
     "geospatial",
     "geotiff",
-    "numpy"
+    "numpy",
+    "zarr",
+    "rlang",
+    "sampling",
+    "mosaic"
   ],
   "license": "Apache-2.0",
   "name": "tessera",
