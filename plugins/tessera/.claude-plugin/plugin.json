@@ -2,7 +2,7 @@
   "author": {
     "name": "Isaac Corley"
   },
-  "description": "Use when working with TESSERA satellite embeddings — downloading via CLI, sampling via the Python or R library, choosing between point-based and mosaic approaches, or exporting to GeoTIFF/NPY/Zarr.",
+  "description": "Use when working with TESSERA satellite embeddings \u2014 downloading via CLI, sampling via the Python or R library, choosing between point-based and mosaic approaches, or exporting to GeoTIFF/NPY/Zarr.",
   "homepage": "https://isaac.earth/geospatial-skills/",
   "keywords": [
     "tessera",

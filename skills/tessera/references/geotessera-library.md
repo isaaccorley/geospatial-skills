@@ -39,6 +39,7 @@ embeddings = gt.sample_embeddings_at_points(
 ```
 
 **Point input formats:**
+
 - List of `(lon, lat)` tuples
 - GeoJSON FeatureCollection with Point geometries
 - GeoPandas GeoDataFrame
