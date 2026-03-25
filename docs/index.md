@@ -39,4 +39,5 @@ claude plugin install <skill-name>@geospatial-skills
 
 - [`geoparquet-validation`](skills/geoparquet-validation.md): `gpio`-focused GeoParquet validation, optimization, and distribution workflows. Referenced from `geoparquet-io/geoparquet-skill`.
 - [`gdal`](skills/gdal.md): GDAL command line workflows for raster and vector data. Referenced from Microsoft AI for Earth geospatial recipes.
+- [`geospatial-viewers`](skills/geospatial-viewers.md): Interactive raster, vector, and terminal geospatial viewers. Referenced from `nkeikon/viewtif`, `nkeikon/viewgeom`, and `nkeikon/viewinline`.
 - [`tessera`](skills/tessera.md): Download Tessera embeddings with the `geotessera` CLI. Referenced from `ucam-eo/geotessera`.

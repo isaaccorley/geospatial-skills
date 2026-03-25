@@ -6,18 +6,18 @@ Requires Python >= 3.9.
 
 ## Options
 
-| Option | Description |
-|--------|-------------|
-| `--column <name>` | Numeric or categorical column for coloring |
-| `--layer <name>` | Layer name for multi-layer files (`.gpkg`, `.gdb`) |
-| `--limit N` | Max features to load (default: 100000; use `0` for no limit) |
-| `--simplify <tol\|off>` | Geometry simplification tolerance (default: 0.01), or `off` to disable |
-| `--point-size px` | Override automatic point sizing |
-| `--filter "<expr>"` | Filter with pandas query syntax |
-| `--duckdb "<SQL>"` | Attribute-only SQL filtering via DuckDB (use `data` as table name; no spatial queries) |
-| `--qgis` | Export to temp GeoPackage and open in QGIS |
-| `--save <path>` | Save result to file (format from extension; KML/KMZ/FileGDB saving not supported) |
-| `--version` | Show version |
+| Option                 | Description                                                                            |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| `--column <name>`      | Numeric or categorical column for coloring                                             |
+| `--layer <name>`       | Layer name for multi-layer files (`.gpkg`, `.gdb`)                                     |
+| `--limit N`            | Max features to load (default: 100000; use `0` for no limit)                           |
+| `--simplify <tol/off>` | Geometry simplification tolerance (default: 0.01), or `off` to disable                 |
+| `--point-size px`      | Override automatic point sizing                                                        |
+| `--filter "<expr>"`    | Filter with pandas query syntax                                                        |
+| `--duckdb "<SQL>"`     | Attribute-only SQL filtering via DuckDB (use `data` as table name; no spatial queries) |
+| `--qgis`               | Export to temp GeoPackage and open in QGIS                                             |
+| `--save <path>`        | Save result to file (format from extension; KML/KMZ/FileGDB saving not supported)      |
+| `--version`            | Show version                                                                           |
 
 ## Supported Formats
 
@@ -30,22 +30,22 @@ Requires Python >= 3.9.
 
 ## Extras
 
-| Extra | Install | Enables |
-|-------|---------|---------|
+| Extra     | Install                                   | Enables                      |
+| --------- | ----------------------------------------- | ---------------------------- |
 | `parquet` | `uvx --from "viewgeom[parquet]" viewgeom` | GeoParquet support (pyarrow) |
 
 DuckDB must be installed separately for `--duckdb` support (`pip install duckdb`).
 
 ## Interactive Controls
 
-| Key | Action |
-|-----|--------|
-| `+` / `-` | Zoom in / out |
-| Arrow keys | Pan |
-| `[` / `]` | Switch columns |
-| `M` | Switch colormap |
-| `B` | Toggle basemap (skipped if internet is slow/unavailable) |
-| `R` | Reset view |
+| Key        | Action                                                   |
+| ---------- | -------------------------------------------------------- |
+| `+` / `-`  | Zoom in / out                                            |
+| Arrow keys | Pan                                                      |
+| `[` / `]`  | Switch columns                                           |
+| `M`        | Switch colormap                                          |
+| `B`        | Toggle basemap (skipped if internet is slow/unavailable) |
+| `R`        | Reset view                                               |
 
 ## Performance
 

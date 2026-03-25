@@ -14,51 +14,51 @@ Requires Python >= 3.9. Particularly useful on HPC systems and remote servers vi
 
 ## General Options
 
-| Option | Description |
-|--------|-------------|
+| Option              | Description                                                       |
+| ------------------- | ----------------------------------------------------------------- |
 | `--display DISPLAY` | Resize displayed image (0.5=smaller, 2=bigger; default: auto-fit) |
 
 ## Raster Options
 
-| Option | Description |
-|--------|-------------|
-| `--band BAND` | Band number (default: 1), or slice number for NetCDF |
-| `--timestep INTEGER` | Alias for `--band` when working with NetCDF files |
-| `--subset INTEGER` | Variable index for NetCDF/HDF files (e.g. `--subset 1`) |
-| `--colormap` | Apply colormap (defaults to `terrain`) |
-| `--rgb R G B` | Three band numbers for RGB from a multi-band file (e.g. `--rgb 4 3 2`) |
-| `--rgbfiles R G B` | Three single-band rasters for RGB composite (or pass as positional args) |
-| `--vmin VMIN` | Min pixel value for display scaling |
-| `--vmax VMAX` | Max pixel value for display scaling |
-| `--nodata NODATA` | Override nodata value |
-| `--gallery [GRID]` | Show folder of images as thumbnails (e.g. `5x5`) |
+| Option               | Description                                                              |
+| -------------------- | ------------------------------------------------------------------------ |
+| `--band BAND`        | Band number (default: 1), or slice number for NetCDF                     |
+| `--timestep INTEGER` | Alias for `--band` when working with NetCDF files                        |
+| `--subset INTEGER`   | Variable index for NetCDF/HDF files (e.g. `--subset 1`)                  |
+| `--colormap`         | Apply colormap (defaults to `terrain`)                                   |
+| `--rgb R G B`        | Three band numbers for RGB from a multi-band file (e.g. `--rgb 4 3 2`)   |
+| `--rgbfiles R G B`   | Three single-band rasters for RGB composite (or pass as positional args) |
+| `--vmin VMIN`        | Min pixel value for display scaling                                      |
+| `--vmax VMAX`        | Max pixel value for display scaling                                      |
+| `--nodata NODATA`    | Override nodata value                                                    |
+| `--gallery [GRID]`   | Show folder of images as thumbnails (e.g. `5x5`)                         |
 
 ## Vector Options
 
-| Option | Description |
-|--------|-------------|
-| `--color-by COLUMN` | Column to color features by |
-| `--colormap` | Apply colormap (defaults to `terrain`) |
-| `--width WIDTH` | Line width for boundaries (default: 0.7) |
-| `--edgecolor COLOR` | Edge color for outlines (default: white) |
-| `--layer LAYER` | Layer name for GeoPackage/multi-layer files |
-| `--table` | Display vector/parquet file as tabular data instead of rendering geometry |
+| Option              | Description                                                               |
+| ------------------- | ------------------------------------------------------------------------- |
+| `--color-by COLUMN` | Column to color features by                                               |
+| `--colormap`        | Apply colormap (defaults to `terrain`)                                    |
+| `--width WIDTH`     | Line width for boundaries (default: 0.7)                                  |
+| `--edgecolor COLOR` | Edge color for outlines (default: white)                                  |
+| `--layer LAYER`     | Layer name for GeoPackage/multi-layer files                               |
+| `--table`           | Display vector/parquet file as tabular data instead of rendering geometry |
 
 ## CSV and Parquet Options
 
-| Option | Description |
-|--------|-------------|
-| `--describe [COLUMN]` | Summary statistics (all columns or one) |
-| `--hist [COLUMN]` | Histograms (all columns or one) |
-| `--bins BINS` | Histogram bin count (default: 20) |
-| `--scatter X Y` | Scatter plot of two columns |
-| `--unique COLUMN` | Unique values for a categorical column |
-| `--where EXPR` | Filter rows via SQL WHERE (requires DuckDB) |
-| `--sort COLUMN` | Sort rows by column (ascending; use `--desc` to reverse) |
-| `--desc` | Descending sort (with `--sort`) |
-| `--limit N` | Limit output rows |
-| `--select COLUMNS` | Select specific columns (space-separated) |
-| `--sql QUERY` | Full DuckDB SQL (use `data` as table name) |
+| Option                | Description                                              |
+| --------------------- | -------------------------------------------------------- |
+| `--describe [COLUMN]` | Summary statistics (all columns or one)                  |
+| `--hist [COLUMN]`     | Histograms (all columns or one)                          |
+| `--bins BINS`         | Histogram bin count (default: 20)                        |
+| `--scatter X Y`       | Scatter plot of two columns                              |
+| `--unique COLUMN`     | Unique values for a categorical column                   |
+| `--where EXPR`        | Filter rows via SQL WHERE (requires DuckDB)              |
+| `--sort COLUMN`       | Sort rows by column (ascending; use `--desc` to reverse) |
+| `--desc`              | Descending sort (with `--sort`)                          |
+| `--limit N`           | Limit output rows                                        |
+| `--select COLUMNS`    | Select specific columns (space-separated)                |
+| `--sql QUERY`         | Full DuckDB SQL (use `data` as table name)               |
 
 ## Supported Formats
 
@@ -70,11 +70,11 @@ Requires Python >= 3.9. Particularly useful on HPC systems and remote servers vi
 
 ## Optional Dependencies
 
-| Package | Enables |
-|---------|---------|
-| `duckdb` | `--where`, `--sort`, `--sql`, `--limit` with filtering |
-| `pyarrow` | Parquet/GeoParquet file support |
-| `h5py` | Fallback for HDF5 if GDAL lacks HDF5 support |
+| Package   | Enables                                                |
+| --------- | ------------------------------------------------------ |
+| `duckdb`  | `--where`, `--sort`, `--sql`, `--limit` with filtering |
+| `pyarrow` | Parquet/GeoParquet file support                        |
+| `h5py`    | Fallback for HDF5 if GDAL lacks HDF5 support           |
 
 ## Recipes
 

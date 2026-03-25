@@ -6,21 +6,21 @@ Requires Python >= 3.10 and a graphical display environment.
 
 ## Options
 
-| Option | Description |
-|--------|-------------|
-| `--band N` | Select band from multi-band file |
-| `--rgb R G B` | RGB composite from bands in a single file |
-| `--rgbfiles R G B` | RGB composite from three separate files |
-| `--subset N` | Select HDF/NetCDF subdataset or variable (0-based index) |
-| `--scale N` | Downsample by factor N (loads 1/N² pixels) |
-| `--vmin X --vmax Y` | Fix display value range (without this, range adjusts per band/timestep) |
-| `--nodata VALUE` | Override nodata masking value (auto-detected from file metadata by default) |
-| `--shapefile FILE` | Vector overlay (repeatable for multiple layers; auto-reprojected to raster CRS) |
-| `--shp-color COLOR` | Overlay color (default: cyan) |
-| `--shp-width N` | Overlay line width (default: 1.0) |
-| `--timestep N` | Jump to NetCDF time index (1-based) |
-| `--cartopy on\|off` | Toggle cartopy projection for NetCDF (default: on) |
-| `--qgis` | Export and open directly in QGIS |
+| Option              | Description                                                                     |
+| ------------------- | ------------------------------------------------------------------------------- |
+| `--band N`          | Select band from multi-band file                                                |
+| `--rgb R G B`       | RGB composite from bands in a single file                                       |
+| `--rgbfiles R G B`  | RGB composite from three separate files                                         |
+| `--subset N`        | Select HDF/NetCDF subdataset or variable (0-based index)                        |
+| `--scale N`         | Downsample by factor N (loads 1/N² pixels)                                      |
+| `--vmin X --vmax Y` | Fix display value range (without this, range adjusts per band/timestep)         |
+| `--nodata VALUE`    | Override nodata masking value (auto-detected from file metadata by default)     |
+| `--shapefile FILE`  | Vector overlay (repeatable for multiple layers; auto-reprojected to raster CRS) |
+| `--shp-color COLOR` | Overlay color (default: cyan)                                                   |
+| `--shp-width N`     | Overlay line width (default: 1.0)                                               |
+| `--timestep N`      | Jump to NetCDF time index (1-based)                                             |
+| `--cartopy on/off`  | Toggle cartopy projection for NetCDF (default: on)                              |
+| `--qgis`            | Export and open directly in QGIS                                                |
 
 ## Supported Formats
 
@@ -32,25 +32,25 @@ Requires Python >= 3.10 and a graphical display environment.
 
 ## Extras
 
-| Extra | Install | Enables |
-|-------|---------|---------|
-| `geo` | `uvx --from "viewtif[geo]" viewtif` | Vector overlay support |
+| Extra    | Install                                | Enables                                 |
+| -------- | -------------------------------------- | --------------------------------------- |
+| `geo`    | `uvx --from "viewtif[geo]" viewtif`    | Vector overlay support                  |
 | `netcdf` | `uvx --from "viewtif[netcdf]" viewtif` | NetCDF support with cartopy projections |
 
 HDF/FileGDB require a system GDAL installation (`brew install gdal` or `apt install gdal-bin`).
 
 ## Interactive Controls
 
-| Key | Action |
-|-----|--------|
-| `+` / `-` or mouse wheel | Zoom in / out |
-| Arrow keys or `WASD` | Pan |
-| `C` / `V` | Increase / decrease contrast |
-| `G` / `H` | Increase / decrease gamma |
-| `M` | Toggle colormap (single-band: viridis/magma; NetCDF: RdBu_r/viridis/magma) |
-| `[` / `]` | Previous / next band or time step |
-| `B` | Toggle basemap (Natural Earth boundaries; shows location info for incompatible projections) |
-| `R` | Reset view |
+| Key                      | Action                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| `+` / `-` or mouse wheel | Zoom in / out                                                                               |
+| Arrow keys or `WASD`     | Pan                                                                                         |
+| `C` / `V`                | Increase / decrease contrast                                                                |
+| `G` / `H`                | Increase / decrease gamma                                                                   |
+| `M`                      | Toggle colormap (single-band: viridis/magma; NetCDF: RdBu_r/viridis/magma)                  |
+| `[` / `]`                | Previous / next band or time step                                                           |
+| `B`                      | Toggle basemap (Natural Earth boundaries; shows location info for incompatible projections) |
+| `R`                      | Reset view                                                                                  |
 
 ## Performance
 
