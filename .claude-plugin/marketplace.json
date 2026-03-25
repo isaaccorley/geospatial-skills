@@ -54,6 +54,23 @@
       "name": "tessera",
       "source": "./plugins/tessera",
       "version": "0.1.0"
+    },
+    {
+      "description": "This skill should be used when viewing, previewing, or inspecting geospatial files from the command line. Covers interactive raster viewing (viewtif), interactive vector viewing (viewgeom), and non-interactive terminal-inline viewing (viewinline).",
+      "keywords": [
+        "viewtif",
+        "viewgeom",
+        "viewinline",
+        "geospatial",
+        "viewer",
+        "raster",
+        "vector",
+        "geotiff",
+        "csv"
+      ],
+      "name": "geospatial-viewers",
+      "source": "./plugins/geospatial-viewers",
+      "version": "0.1.0"
     }
   ]
 }
