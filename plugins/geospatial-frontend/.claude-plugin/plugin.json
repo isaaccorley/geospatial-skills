@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "This skill should be used when building map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a warm dark HUD aesthetic. Covers satellite imagery retrieval demos, embedding visualization tools, geospatial search UIs, and any map-first data exploration frontend.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "maplibre",
+    "duckdb",
+    "geospatial",
+    "frontend",
+    "globe",
+    "satellite",
+    "heatmap",
+    "retrieval",
+    "demo"
+  ],
+  "license": "Apache-2.0",
+  "name": "geospatial-frontend",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

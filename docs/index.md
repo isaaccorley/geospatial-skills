@@ -41,3 +41,4 @@ claude plugin install <skill-name>@geospatial-skills
 - [`gdal`](skills/gdal.md): GDAL command line workflows for raster and vector data. Referenced from Microsoft AI for Earth geospatial recipes.
 - [`geospatial-viewers`](skills/geospatial-viewers.md): Interactive raster, vector, and terminal geospatial viewers. Referenced from `nkeikon/viewtif`, `nkeikon/viewgeom`, and `nkeikon/viewinline`.
 - [`tessera`](skills/tessera.md): Download Tessera embeddings with the `geotessera` CLI. Referenced from `ucam-eo/geotessera`.
+- [`geospatial-frontend`](skills/geospatial-frontend.md): Build map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a warm dark HUD aesthetic.

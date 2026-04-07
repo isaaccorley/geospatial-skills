@@ -71,6 +71,23 @@
       "name": "geospatial-viewers",
       "source": "./plugins/geospatial-viewers",
       "version": "0.1.0"
+    },
+    {
+      "description": "This skill should be used when building map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a warm dark HUD aesthetic. Covers satellite imagery retrieval demos, embedding visualization tools, geospatial search UIs, and map-first data exploration frontends.",
+      "keywords": [
+        "maplibre",
+        "duckdb",
+        "geospatial",
+        "frontend",
+        "globe",
+        "satellite",
+        "heatmap",
+        "retrieval",
+        "demo"
+      ],
+      "name": "geospatial-frontend",
+      "source": "./plugins/geospatial-frontend",
+      "version": "0.1.0"
     }
   ]
 }
