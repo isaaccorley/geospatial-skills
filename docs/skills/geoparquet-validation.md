@@ -1,4 +1,8 @@
+<div class="skill-hero" markdown>
+  <span class="skill-hero-icon">📐</span>
+
 # GeoParquet Validation
+</div>
 
 Inspect, validate, optimize, and distribute GeoParquet data with `gpio`.
 
@@ -9,25 +13,25 @@ Inspect, validate, optimize, and distribute GeoParquet data with `gpio`.
 
 ## Install
 
-### Universal
+=== "Universal"
 
-```bash
-cp -R skills/geoparquet-validation ~/.agent/skills/geoparquet-validation
-```
+    ```bash
+    cp -R skills/geoparquet-validation ~/.agent/skills/geoparquet-validation
+    ```
 
-### Claude
+=== "Claude"
 
-```bash
-/plugin marketplace add isaaccorley/geospatial-skills
-/plugin install geoparquet-validation@geospatial-skills
-```
+    ```bash
+    /plugin marketplace add isaaccorley/geospatial-skills
+    /plugin install geoparquet-validation@geospatial-skills
+    ```
 
-CLI:
+    CLI:
 
-```bash
-claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install geoparquet-validation@geospatial-skills
-```
+    ```bash
+    claude plugin marketplace add isaaccorley/geospatial-skills
+    claude plugin install geoparquet-validation@geospatial-skills
+    ```
 
 ## Prerequisites
 
@@ -93,8 +97,12 @@ gpio publish stac <input> <output.json>
 
 ## Source
 
+<div class="source-panel" markdown>
+
 - Skill: [skills/geoparquet-validation/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/SKILL.md)
 - Command reference: [skills/geoparquet-validation/references/gpio-commands.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/gpio-commands.md)
 - Best practices: [skills/geoparquet-validation/references/distribution-best-practices.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/distribution-best-practices.md)
 - Tool comparison: [skills/geoparquet-validation/references/tool-comparison.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geoparquet-validation/references/tool-comparison.md)
 - Upstream reference: [geoparquet-io/geoparquet-skill](https://github.com/geoparquet-io/geoparquet-skill)
+
+</div>

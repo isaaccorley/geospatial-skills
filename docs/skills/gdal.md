@@ -1,4 +1,8 @@
+<div class="skill-hero" markdown>
+  <span class="skill-hero-icon">🗺️</span>
+
 # GDAL
+</div>
 
 General GDAL command line workflows for raster and vector geospatial processing.
 
@@ -9,25 +13,25 @@ General GDAL command line workflows for raster and vector geospatial processing.
 
 ## Install
 
-### Universal
+=== "Universal"
 
-```bash
-cp -R skills/gdal ~/.agent/skills/gdal
-```
+    ```bash
+    cp -R skills/gdal ~/.agent/skills/gdal
+    ```
 
-### Claude
+=== "Claude"
 
-```bash
-/plugin marketplace add isaaccorley/geospatial-skills
-/plugin install gdal@geospatial-skills
-```
+    ```bash
+    /plugin marketplace add isaaccorley/geospatial-skills
+    /plugin install gdal@geospatial-skills
+    ```
 
-CLI:
+    CLI:
 
-```bash
-claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install gdal@geospatial-skills
-```
+    ```bash
+    claude plugin marketplace add isaaccorley/geospatial-skills
+    claude plugin install gdal@geospatial-skills
+    ```
 
 ## Common tasks
 
@@ -52,6 +56,10 @@ gdal2tiles.py -z 10-16 INPUT_BYTE.tif OUTPUT/
 
 ## Source
 
+<div class="source-panel" markdown>
+
 - Skill: [skills/gdal/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/gdal/SKILL.md)
 - Recipes: [skills/gdal/references/gdal-recipes.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/gdal/references/gdal-recipes.md)
 - Upstream reference: [microsoft/ai4eutils geospatial recipes](https://github.com/microsoft/ai4eutils/blob/master/geospatial/recipes_and_guides/geospatial_recipes.md)
+
+</div>

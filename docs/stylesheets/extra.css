@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=DM+Serif+Text&display=swap");
 
+/* ── Earthy palette ─────────────────────────────────────────── */
 :root {
-  --geo-bg: #07110d;
-  --geo-panel: rgba(10, 21, 16, 0.84);
-  --geo-panel-strong: rgba(8, 17, 13, 0.96);
-  --geo-fg: #e6f2ea;
-  --geo-fg-muted: #93a89b;
-  --geo-green: #8dffb0;
-  --geo-green-dim: #1b3c2b;
-  --geo-line: rgba(141, 255, 176, 0.12);
+  --geo-bg: #0d110e;
+  --geo-panel: rgba(16, 22, 17, 0.84);
+  --geo-panel-strong: rgba(12, 18, 13, 0.96);
+  --geo-fg: #e8eedf;
+  --geo-fg-muted: #9aa88e;
+  --geo-green: #a8c5a0;
+  --geo-olive: #c4b57a;
+  --geo-ochre: #d4a853;
+  --geo-line: rgba(168, 197, 160, 0.10);
+  --geo-line-warm: rgba(196, 181, 122, 0.08);
 }
 
 [data-md-color-scheme="default"],
@@ -16,43 +19,54 @@
   --md-default-bg-color: var(--geo-bg);
   --md-default-fg-color: var(--geo-fg);
   --md-default-fg-color--light: var(--geo-fg-muted);
-  --md-primary-fg-color: #06100c;
+  --md-primary-fg-color: #0a0f0b;
   --md-primary-bg-color: var(--geo-fg);
-  --md-accent-fg-color: var(--geo-green);
+  --md-accent-fg-color: var(--geo-ochre);
   --md-typeset-a-color: var(--geo-green);
-  --md-code-bg-color: rgba(141, 255, 176, 0.08);
+  --md-code-bg-color: rgba(168, 197, 160, 0.07);
 }
 
+/* ── Typography ─────────────────────────────────────────────── */
 body,
 input,
 .md-typeset {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+.md-typeset h1 {
+  font-family: "DM Serif Text", serif;
+  letter-spacing: -0.02em;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
 .md-header,
 .md-tabs {
-  background: rgba(5, 14, 10, 0.92);
+  background: rgba(10, 15, 11, 0.92);
   backdrop-filter: blur(10px);
 }
 
+/* ── Background: topo grid ──────────────────────────────────── */
 .md-main {
   background:
-    radial-gradient(circle at 20% 10%, rgba(141, 255, 176, 0.08), transparent 18%),
-    radial-gradient(circle at 80% 0%, rgba(141, 255, 176, 0.04), transparent 22%),
-    linear-gradient(180deg, rgba(141, 255, 176, 0.04), transparent 30%),
+    radial-gradient(circle at 20% 10%, rgba(168, 197, 160, 0.06), transparent 18%),
+    radial-gradient(circle at 80% 0%, rgba(196, 181, 122, 0.04), transparent 22%),
+    linear-gradient(180deg, rgba(168, 197, 160, 0.03), transparent 30%),
     repeating-linear-gradient(0deg, transparent 0 38px, var(--geo-line) 38px 39px),
     repeating-linear-gradient(90deg, transparent 0 38px, var(--geo-line) 38px 39px),
-    #07110d;
+    var(--geo-bg);
+  background-attachment: fixed;
 }
 
 .md-content__inner {
   padding-bottom: 3rem;
 }
 
+/* ── Hero ───────────────────────────────────────────────────── */
 .hero-shell {
   margin: 0.5rem 0 2rem;
   padding: 1.2rem 0 1.6rem;
   border-bottom: 1px solid var(--geo-line);
+  position: relative;
 }
 
 .hero-shell h1 {
@@ -68,7 +82,7 @@ input,
   letter-spacing: 0.18em;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--geo-green);
+  color: var(--geo-ochre);
 }
 
 .hero-lead {
@@ -91,14 +105,148 @@ input,
   padding: 0.7rem 0.95rem;
   text-decoration: none;
   border: 1px solid var(--geo-line);
+  transition: transform 180ms, box-shadow 180ms;
 }
 
 .hero-button {
-  background: var(--geo-green);
+  background: linear-gradient(180deg, var(--geo-ochre), #b8923a);
   border-color: transparent;
-  color: #04110a !important;
+  color: #0a0f0b !important;
+  font-weight: 600;
 }
 
+.hero-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(212, 168, 83, 0.25);
+}
+
+.hero-link:hover {
+  border-color: var(--geo-green);
+}
+
+/* ── Contour animation (hero) ───────────────────────────────── */
+.hero-contour {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 200px;
+  opacity: 0.12;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-contour svg {
+  width: 100%;
+  height: 100%;
+  animation: contour-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes contour-drift {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-8px) scale(1.03); }
+}
+
+/* ── Catalog card grid ──────────────────────────────────────── */
+.md-typeset .catalog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+  .md-typeset .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MkDocs wraps <a> in <p> — flatten so grid sees cards directly */
+.md-typeset .catalog-grid > p,
+.catalog-grid > p {
+  display: contents !important;
+  margin: 0 !important;
+}
+
+.md-typeset div.catalog-grid > p {
+  display: contents !important;
+}
+
+.catalog-card {
+  background: var(--geo-panel);
+  backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid var(--geo-line);
+  border-radius: 14px;
+  padding: 1.2rem 1.1rem 1rem;
+  text-decoration: none !important;
+  color: var(--geo-fg) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 200ms, box-shadow 200ms, border-color 200ms;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: fadeSlideUp 360ms ease-out both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+  height: 100%;
+}
+
+.catalog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3);
+  border-color: rgba(168, 197, 160, 0.22);
+}
+
+.catalog-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.catalog-card-name {
+  font-family: "DM Serif Text", serif;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.catalog-card-desc {
+  font-size: 0.82rem;
+  color: var(--geo-fg-muted);
+  line-height: 1.45;
+}
+
+.catalog-card-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--geo-ochre);
+  background: rgba(212, 168, 83, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Skill page hero icon ───────────────────────────────────── */
+.skill-hero {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.skill-hero-icon {
+  font-size: 2rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* ── Skill callout ──────────────────────────────────────────── */
 .skill-callout {
   border: 1px solid var(--geo-line);
   background: var(--geo-panel);
@@ -107,25 +255,93 @@ input,
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
-.md-typeset table:not([class]) {
-  border-radius: 0.8rem;
+/* ── Terminal chrome on code blocks ─────────────────────────── */
+.md-typeset pre {
+  position: relative;
+  border: 1px solid var(--geo-line);
+  border-radius: 10px;
   overflow: hidden;
-  background: var(--geo-panel-strong);
+  padding-top: 2rem;
+  background: rgba(10, 15, 11, 0.6);
 }
 
-.md-typeset .admonition,
-.md-typeset details {
-  background: var(--geo-panel);
-  border-color: var(--geo-line);
+.md-typeset pre::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e35b52;
+  box-shadow:
+    16px 0 0 #e6a040,
+    32px 0 0 #54b648;
 }
 
 .md-typeset pre > code {
   background: transparent;
 }
 
+/* ── Tables ─────────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: var(--geo-panel-strong);
+}
+
+/* ── Admonitions ────────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--geo-panel);
+  border-color: var(--geo-line);
+}
+
+/* ── Search / sidebar ───────────────────────────────────────── */
 .md-search__form,
 .md-search__output,
 .md-nav,
 .md-sidebar__scrollwrap {
   background: transparent;
+}
+
+/* ── Source links panel ─────────────────────────────────────── */
+.source-panel {
+  background: var(--geo-panel);
+  border: 1px solid var(--geo-line);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+}
+
+.source-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.source-panel li {
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.source-panel li::before {
+  content: "~ ";
+  color: var(--geo-fg-muted);
+  font-family: monospace;
+}
+
+/* ── Footer attribution ─────────────────────────────────────── */
+.md-footer {
+  border-top: 1px solid var(--geo-line-warm);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-contour {
+    display: none;
+  }
 }

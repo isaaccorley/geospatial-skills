@@ -1,4 +1,8 @@
+<div class="skill-hero" markdown>
+  <span class="skill-hero-icon">👁️</span>
+
 # Geospatial Viewers
+</div>
 
 Preview and inspect geospatial files from the command line using `viewtif`, `viewgeom`, and `viewinline`.
 
@@ -9,25 +13,25 @@ Preview and inspect geospatial files from the command line using `viewtif`, `vie
 
 ## Install
 
-### Universal
+=== "Universal"
 
-```bash
-cp -R skills/geospatial-viewers ~/.agent/skills/geospatial-viewers
-```
+    ```bash
+    cp -R skills/geospatial-viewers ~/.agent/skills/geospatial-viewers
+    ```
 
-### Claude
+=== "Claude"
 
-```bash
-/plugin marketplace add isaaccorley/geospatial-skills
-/plugin install geospatial-viewers@geospatial-skills
-```
+    ```bash
+    /plugin marketplace add isaaccorley/geospatial-skills
+    /plugin install geospatial-viewers@geospatial-skills
+    ```
 
-CLI:
+    CLI:
 
-```bash
-claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install geospatial-viewers@geospatial-skills
-```
+    ```bash
+    claude plugin marketplace add isaaccorley/geospatial-skills
+    claude plugin install geospatial-viewers@geospatial-skills
+    ```
 
 ## Common tasks
 
@@ -51,8 +55,12 @@ uvx viewinline data.csv --scatter longitude latitude
 
 ## Source
 
+<div class="source-panel" markdown>
+
 - Skill: [skills/geospatial-viewers/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-viewers/SKILL.md)
 - viewtif reference: [skills/geospatial-viewers/references/viewtif.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-viewers/references/viewtif.md)
 - viewgeom reference: [skills/geospatial-viewers/references/viewgeom.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-viewers/references/viewgeom.md)
 - viewinline reference: [skills/geospatial-viewers/references/viewinline.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-viewers/references/viewinline.md)
 - Upstream: [nkeikon/tifviewer](https://github.com/nkeikon/tifviewer), [nkeikon/geomviewer](https://github.com/nkeikon/geomviewer), [nkeikon/inlineviewer](https://github.com/nkeikon/inlineviewer)
+
+</div>

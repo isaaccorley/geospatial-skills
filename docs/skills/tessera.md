@@ -1,4 +1,8 @@
+<div class="skill-hero" markdown>
+  <span class="skill-hero-icon">🛰️</span>
+
 # Tessera
+</div>
 
 Work with TESSERA satellite embeddings via the CLI, Python library, or R library.
 
@@ -9,25 +13,25 @@ Work with TESSERA satellite embeddings via the CLI, Python library, or R library
 
 ## Install
 
-### Universal
+=== "Universal"
 
-```bash
-cp -R skills/tessera ~/.agent/skills/tessera
-```
+    ```bash
+    cp -R skills/tessera ~/.agent/skills/tessera
+    ```
 
-### Claude
+=== "Claude"
 
-```bash
-/plugin marketplace add isaaccorley/geospatial-skills
-/plugin install tessera@geospatial-skills
-```
+    ```bash
+    /plugin marketplace add isaaccorley/geospatial-skills
+    /plugin install tessera@geospatial-skills
+    ```
 
-CLI:
+    CLI:
 
-```bash
-claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install tessera@geospatial-skills
-```
+    ```bash
+    claude plugin marketplace add isaaccorley/geospatial-skills
+    claude plugin install tessera@geospatial-skills
+    ```
 
 ## Quick start
 
@@ -72,8 +76,12 @@ uv and uvx works, so you can `uvx geotessera` for zero-installation invocation.
 
 ## Source
 
+<div class="source-panel" markdown>
+
 - Skill: [skills/tessera/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/tessera/SKILL.md)
 - CLI reference: [skills/tessera/references/geotessera-cli.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/tessera/references/geotessera-cli.md)
 - Library reference: [skills/tessera/references/geotessera-library.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/tessera/references/geotessera-library.md)
 - R library docs: [lassa-sentinel.github.io/GeoTessera](https://lassa-sentinel.github.io/GeoTessera)
 - Upstream: [ucam-eo/geotessera](https://github.com/ucam-eo/geotessera)
+
+</div>

@@ -1,4 +1,8 @@
+<div class="skill-hero" markdown>
+  <span class="skill-hero-icon">🌍</span>
+
 # Geospatial Frontend
+</div>
 
 Build premium map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a warm dark HUD aesthetic.
 
@@ -9,25 +13,25 @@ Build premium map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a w
 
 ## Install
 
-### Universal
+=== "Universal"
 
-```bash
-cp -R skills/geospatial-frontend ~/.agent/skills/geospatial-frontend
-```
+    ```bash
+    cp -R skills/geospatial-frontend ~/.agent/skills/geospatial-frontend
+    ```
 
-### Claude
+=== "Claude"
 
-```bash
-/plugin marketplace add isaaccorley/geospatial-skills
-/plugin install geospatial-frontend@geospatial-skills
-```
+    ```bash
+    /plugin marketplace add isaaccorley/geospatial-skills
+    /plugin install geospatial-frontend@geospatial-skills
+    ```
 
-CLI:
+    CLI:
 
-```bash
-claude plugin marketplace add isaaccorley/geospatial-skills
-claude plugin install geospatial-frontend@geospatial-skills
-```
+    ```bash
+    claude plugin marketplace add isaaccorley/geospatial-skills
+    claude plugin install geospatial-frontend@geospatial-skills
+    ```
 
 ## Common tasks
 
@@ -46,6 +50,10 @@ claude plugin install geospatial-frontend@geospatial-skills
 
 ## Source
 
+<div class="source-panel" markdown>
+
 - Skill: [skills/geospatial-frontend/SKILL.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-frontend/SKILL.md)
 - Design system: [skills/geospatial-frontend/references/design-system.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-frontend/references/design-system.md)
 - UI preferences: [skills/geospatial-frontend/references/user-preferences.md](https://github.com/isaaccorley/geospatial-skills/blob/main/skills/geospatial-frontend/references/user-preferences.md)
+
+</div>
