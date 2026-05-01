@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">🧊</span>
 
 # GeoZarr
+
 </div>
 
 Author, patch, and validate georeferenced Zarr stores for xarray, rioxarray, GDAL, and QGIS.
