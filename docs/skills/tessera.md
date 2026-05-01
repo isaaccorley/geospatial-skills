@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">🛰️</span>
 
 # Tessera
+
 </div>
 
 Work with TESSERA satellite embeddings via the CLI, Python library, or R library.

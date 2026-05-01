@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "GeoZarr conventions for geospatial Zarr stores: CF grid_mapping, coordinate arrays, Zarr v2/v3 dimension declarations, multiscales, proj:/spatial: namespaces, and xarray/rioxarray/GDAL interop.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "geozarr",
+    "zarr",
+    "xarray",
+    "rioxarray",
+    "gdal",
+    "geospatial",
+    "raster",
+    "cloud-native"
+  ],
+  "license": "Apache-2.0",
+  "name": "geozarr",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

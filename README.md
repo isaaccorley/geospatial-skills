@@ -5,6 +5,7 @@ A collection of separately installable geospatial `SKILL.md` packages.
 ## Current skills
 
 - `geoparquet-validation`: `gpio`-focused GeoParquet validation and distribution workflows
+- `geozarr`: GeoZarr metadata conventions for georeferenced Zarr stores
 - `gdal`: GDAL command line workflows for raster and vector data
 - `tessera`: Tessera embedding downloads with the `geotessera` CLI
 
@@ -18,6 +19,8 @@ skills/
   gdal/
     SKILL.md
     references/
+  geozarr/
+    SKILL.md
   tessera/
     SKILL.md
     references/

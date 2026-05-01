@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">👁️</span>
 
 # Geospatial Viewers
+
 </div>
 
 Preview and inspect geospatial files from the command line using `viewtif`, `viewgeom`, and `viewinline`.

@@ -45,6 +45,7 @@ nav:
   - Skills:
       - GDAL: skills/gdal.md
       - GeoParquet Validation: skills/geoparquet-validation.md
+      - GeoZarr: skills/geozarr.md
       - Tessera: skills/tessera.md
       - Geospatial Viewers: skills/geospatial-viewers.md
       - Geospatial Frontend: skills/geospatial-frontend.md

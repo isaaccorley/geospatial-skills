@@ -40,6 +40,7 @@ Full CSS custom property spec for the warm espresso + ivory + rust palette.
 ## Typography
 
 ### Font loading (index.html)
+
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,6 +48,7 @@ Full CSS custom property spec for the warm espresso + ivory + rust palette.
 ```
 
 ### Font assignments
+
 ```css
 body {
   font-family: "Inter Tight", sans-serif;
@@ -79,6 +81,7 @@ h2 {
 ```
 
 ### Letterspacing scale
+
 - Display (h1, brand): `-0.04em`
 - Body: `-0.005em`
 - Labels/kickers: `0.22em` (uppercase, open)

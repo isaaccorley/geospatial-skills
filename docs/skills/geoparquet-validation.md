@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">📐</span>
 
 # GeoParquet Validation
+
 </div>
 
 Inspect, validate, optimize, and distribute GeoParquet data with `gpio`.

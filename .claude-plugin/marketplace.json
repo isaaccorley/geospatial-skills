@@ -41,6 +41,22 @@
       "version": "0.1.0"
     },
     {
+      "description": "GeoZarr conventions for geospatial Zarr stores: CF grid_mapping, coordinate arrays, Zarr v2/v3 dimension declarations, multiscales, proj:/spatial: namespaces, and xarray/rioxarray/GDAL interop.",
+      "keywords": [
+        "geozarr",
+        "zarr",
+        "xarray",
+        "rioxarray",
+        "gdal",
+        "geospatial",
+        "raster",
+        "cloud-native"
+      ],
+      "name": "geozarr",
+      "source": "./plugins/geozarr",
+      "version": "0.1.0"
+    },
+    {
       "description": "This skill should be used when downloading Tessera embeddings with the geotessera CLI. Covers coverage inspection, bbox and region downloads, GeoTIFF vs NPY export, band selection, registry configuration, cache behavior, and local visualization.",
       "keywords": [
         "tessera",

@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">🌍</span>
 
 # Geospatial Frontend
+
 </div>
 
 Build premium map-centric demo webapps with MapLibre globe, DuckDB-WASM, and a warm dark HUD aesthetic.

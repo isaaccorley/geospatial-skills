@@ -2,6 +2,7 @@
   <span class="skill-hero-icon">🗺️</span>
 
 # GDAL
+
 </div>
 
 General GDAL command line workflows for raster and vector geospatial processing.

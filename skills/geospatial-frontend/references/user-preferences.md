@@ -12,6 +12,7 @@ Battle-tested patterns from building a production geospatial retrieval demo.
 ## Remove Clutter
 
 Aggressively strip unnecessary text. All explicitly removed in testing:
+
 - "Region of Interest" label, "Draw an AOI to fetch candidate tiles", "Ranked candidates" heading, "Awaiting Region" placeholder
 - Chip IDs (just show coords), section numbering (01/02/03), "Clear points" text when icon suffices
 - Stats panels (shards/roi/patches count), "Cutoff" label (just show "1/300"), "data-driven" badges
