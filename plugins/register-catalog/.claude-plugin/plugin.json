@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "Register a Portolan catalog in the Portolan registry by opening a pull request that adds a catalog entry file.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "portolan",
+    "registry",
+    "stac",
+    "catalog",
+    "pull-request",
+    "gh",
+    "submission"
+  ],
+  "license": "Apache-2.0",
+  "name": "register-catalog",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

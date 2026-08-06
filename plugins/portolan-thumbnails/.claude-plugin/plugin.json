@@ -1,0 +1,20 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "Generate high-quality thumbnails from Portolan collections using chiitiler (MapLibre GL Native). Renders the collection's actual styles/default.json server-side with optional basemap. Requires Node.js 18+.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "portolan",
+    "thumbnails",
+    "chiitiler",
+    "maplibre",
+    "pmtiles",
+    "rendering",
+    "basemap"
+  ],
+  "license": "Apache-2.0",
+  "name": "portolan-thumbnails",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

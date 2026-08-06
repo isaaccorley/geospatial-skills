@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "Use when publishing, managing, or converting cloud-native geospatial data catalogs with the Portolan CLI. Covers init, add, check, push, pull, sync, partitioning, and format conversion workflows.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "portolan",
+    "cli",
+    "stac",
+    "geoparquet",
+    "cog",
+    "pmtiles",
+    "versioning",
+    "s3",
+    "cloud-native"
+  ],
+  "license": "Apache-2.0",
+  "name": "portolan-cli",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "Use when exploring, querying, analyzing, or visualizing data from a Portolan catalog (STAC-based cloud-native geospatial data). Covers navigating STAC metadata, querying GeoParquet with DuckDB, cross-dataset joins, geospatial analysis, and creating interactive maps with PMTiles/MapLibre/deck.gl/Potree.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "portolan",
+    "stac",
+    "duckdb",
+    "geoparquet",
+    "pmtiles",
+    "maplibre",
+    "spatial-join",
+    "deck.gl",
+    "copc"
+  ],
+  "license": "Apache-2.0",
+  "name": "reading-portolan",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

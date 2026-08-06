@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "Upload geospatial data to Source Cooperative with proper metadata and READMEs using Portolan CLI.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "source-cooperative",
+    "portolan",
+    "publishing",
+    "s3",
+    "metadata",
+    "readme",
+    "geoparquet",
+    "open-data"
+  ],
+  "license": "Apache-2.0",
+  "name": "sourcecoop",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

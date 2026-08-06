@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Portolan SDI"
+  },
+  "description": "End-to-end catalog creation from a data source - extract, enrich metadata, generate assets, push to remote",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "portolan",
+    "stac",
+    "catalog",
+    "extraction",
+    "wfs",
+    "arcgis",
+    "geoparquet",
+    "metadata",
+    "cloud-native"
+  ],
+  "license": "Apache-2.0",
+  "name": "portolan-bootstrap",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}
