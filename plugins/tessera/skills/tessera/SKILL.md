@@ -90,7 +90,7 @@ Point inputs accept list of (lon, lat) tuples, GeoJSON FeatureCollections, or Ge
 
 ## R library
 
-An R port. Uses R6 classes, sf, terra, and arrow.
+An R port by Simon Frost (Microsoft Research). Uses R6 classes, sf, terra, and arrow.
 
 ```r
 remotes::install_github("lassa-sentinel/GeoTessera")
