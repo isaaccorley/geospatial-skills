@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Qiusheng Wu"
+  },
+  "description": "Run pre-trained AI models on geospatial imagery. Detect buildings, cars, ships, solar panels, agriculture fields, or use text-prompted segmentation with GroundedSAM. Requires GPU for best performance.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "object-detection",
+    "segmentation",
+    "building-footprints",
+    "grounded-sam",
+    "deep-learning",
+    "satellite-imagery",
+    "geoai",
+    "pytorch"
+  ],
+  "license": "MIT",
+  "name": "detect-objects",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

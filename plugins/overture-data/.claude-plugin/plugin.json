@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Qiusheng Wu"
+  },
+  "description": "Download Overture Maps data (buildings, places, roads, land use, water, etc.) for a bounding box. Returns a GeoDataFrame saved as GeoJSON or GeoPackage.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "overture-maps",
+    "buildings",
+    "places",
+    "roads",
+    "land-use",
+    "vector",
+    "download",
+    "geopackage"
+  ],
+  "license": "MIT",
+  "name": "overture-data",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

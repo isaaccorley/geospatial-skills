@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Qiusheng Wu"
+  },
+  "description": "Search and download satellite imagery from Microsoft Planetary Computer. Browse available collections, search by bbox and time range, list assets, and download specific items.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "stac",
+    "planetary-computer",
+    "sentinel-2",
+    "satellite-imagery",
+    "search",
+    "download",
+    "collections",
+    "bbox"
+  ],
+  "license": "MIT",
+  "name": "search-stac",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}
