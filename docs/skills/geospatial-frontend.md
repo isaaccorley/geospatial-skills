@@ -28,4 +28,7 @@ example_html: |
 prev:
   slug: geospatial-viewers
   name: Geospatial Viewers
+next:
+  slug: parallel-geospatial
+  name: Parallel Geospatial
 ---

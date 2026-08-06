@@ -26,3 +26,16 @@ nav:
       - Tessera: skills/tessera.md
       - Geospatial Viewers: skills/geospatial-viewers.md
       - Geospatial Frontend: skills/geospatial-frontend.md
+      - Parallel Geospatial: skills/parallel-geospatial.md
+      - PMTiles Pipeline: skills/pmtiles-pipeline.md
+      - Zarr Multiscales: skills/zarr-multiscales.md
+      - Planet Bulk Download: skills/planet-bulk-download.md
+      - Portolan CLI: skills/portolan-cli.md
+      - Portolan Bootstrap: skills/portolan-bootstrap.md
+      - Reading Portolan: skills/reading-portolan.md
+      - Portolan Thumbnails: skills/portolan-thumbnails.md
+      - Register Catalog: skills/register-catalog.md
+      - Source Cooperative: skills/sourcecoop.md
+      - Search STAC: skills/search-stac.md
+      - Overture Data: skills/overture-data.md
+      - Detect Objects: skills/detect-objects.md

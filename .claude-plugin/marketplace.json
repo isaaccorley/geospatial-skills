@@ -104,6 +104,216 @@
       "name": "geospatial-frontend",
       "source": "./plugins/geospatial-frontend",
       "version": "0.1.0"
+    },
+    {
+      "description": "Parallelize large-scale geospatial operations on a single fat node \u2014 tile-edge dissolve, polygon elimination, polygonize, spatial joins, reprojection, simplification \u2014 at national/continental scale (10\u2013100M polygons). Use when speeding up or designing a geospatial batch process, or as a pre-flight checklist for known failure modes (DuckDB GEOS segfaults, topology exceptions, int64 overflow, NFS thrashing).",
+      "keywords": [
+        "parallel",
+        "duckdb",
+        "shapely",
+        "strtree",
+        "geoparquet",
+        "spatial-join",
+        "dissolve",
+        "polygonize",
+        "hpc"
+      ],
+      "name": "parallel-geospatial",
+      "source": "./plugins/parallel-geospatial",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Download PlanetScope imagery at scale (hundreds to 100k+ AOIs) via the Planet Python SDK v2. Covers search/activate/extract phases, COG /vsicurl/ vs Orders API, GDAL config for signed URLs, retry logic, concurrency budgets, and Planet-side gotchas (broken activations, cold-storage thaw tails, dead assets). Use when downloading at scale, hitting 429s or stuck activations, choosing Orders API vs COG reads, or designing a resumable batch Planet pipeline.",
+      "keywords": [
+        "planet",
+        "planetscope",
+        "satellite-imagery",
+        "cog",
+        "vsicurl",
+        "bulk-download",
+        "retry",
+        "gdal"
+      ],
+      "name": "planet-bulk-download",
+      "source": "./plugins/planet-bulk-download",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Build a global PMTiles archive from raster predictions or any large vector dataset on a single fat node. Covers raster\u2192polygon\u2192geoparquet\u2192FlatGeobuf\u2192sharded tippecanoe\u2192tile-join, with profiling, error recovery, and I/O-aware staging. Use when the user asks to vectorize raster predictions, polygonize change layers, build PMTiles at over 100M-feature scale, profile tippecanoe, decide tippecanoe flags, choose between tippecanoe / planetiler / pmtiles merge, or speed up a slow pmtiles build.",
+      "keywords": [
+        "pmtiles",
+        "tippecanoe",
+        "flatgeobuf",
+        "vector-tiles",
+        "polygonize",
+        "tile-join",
+        "geoparquet",
+        "maplibre"
+      ],
+      "name": "pmtiles-pipeline",
+      "source": "./plugins/pmtiles-pipeline",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Build GeoZarr multiscale pyramids (overviews) into existing Zarr stores for tile/web streaming \u2014 choosing a resampling operator that respects the data's semantics (probability simplex, categorical, continuous), cascading levels, striping work across batch workers or dask without losing shards, and verifying completeness. Use when adding overviews/pyramids/multiscales to a Zarr or GeoZarr store, downsampling ML prediction rasters, or debugging a pyramid with missing or wrong shards.",
+      "keywords": [
+        "zarr",
+        "geozarr",
+        "multiscales",
+        "pyramids",
+        "overviews",
+        "resampling",
+        "downsampling",
+        "sharding"
+      ],
+      "name": "zarr-multiscales",
+      "source": "./plugins/zarr-multiscales",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Use when publishing, managing, or converting cloud-native geospatial data catalogs with the Portolan CLI. Covers init, add, check, push, pull, sync, partitioning, and format conversion workflows.",
+      "keywords": [
+        "portolan",
+        "cli",
+        "stac",
+        "geoparquet",
+        "cog",
+        "pmtiles",
+        "versioning",
+        "s3",
+        "cloud-native"
+      ],
+      "name": "portolan-cli",
+      "source": "./plugins/portolan-cli",
+      "version": "0.1.0"
+    },
+    {
+      "description": "End-to-end catalog creation from a data source - extract, enrich metadata, generate assets, push to remote",
+      "keywords": [
+        "portolan",
+        "stac",
+        "catalog",
+        "extraction",
+        "wfs",
+        "arcgis",
+        "geoparquet",
+        "metadata",
+        "cloud-native"
+      ],
+      "name": "portolan-bootstrap",
+      "source": "./plugins/portolan-bootstrap",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Use when exploring, querying, analyzing, or visualizing data from a Portolan catalog (STAC-based cloud-native geospatial data). Covers navigating STAC metadata, querying GeoParquet with DuckDB, cross-dataset joins, geospatial analysis, and creating interactive maps with PMTiles/MapLibre/deck.gl/Potree.",
+      "keywords": [
+        "portolan",
+        "stac",
+        "duckdb",
+        "geoparquet",
+        "pmtiles",
+        "maplibre",
+        "spatial-join",
+        "deck.gl",
+        "copc"
+      ],
+      "name": "reading-portolan",
+      "source": "./plugins/reading-portolan",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Generate high-quality thumbnails from Portolan collections using chiitiler (MapLibre GL Native). Renders the collection's actual styles/default.json server-side with optional basemap. Requires Node.js 18+.",
+      "keywords": [
+        "portolan",
+        "thumbnails",
+        "chiitiler",
+        "maplibre",
+        "pmtiles",
+        "rendering",
+        "basemap"
+      ],
+      "name": "portolan-thumbnails",
+      "source": "./plugins/portolan-thumbnails",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Register a Portolan catalog in the Portolan registry by opening a pull request that adds a catalog entry file.",
+      "keywords": [
+        "portolan",
+        "registry",
+        "stac",
+        "catalog",
+        "pull-request",
+        "gh",
+        "submission"
+      ],
+      "name": "register-catalog",
+      "source": "./plugins/register-catalog",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Upload geospatial data to Source Cooperative with proper metadata and READMEs using Portolan CLI.",
+      "keywords": [
+        "source-cooperative",
+        "portolan",
+        "publishing",
+        "s3",
+        "metadata",
+        "readme",
+        "geoparquet",
+        "open-data"
+      ],
+      "name": "sourcecoop",
+      "source": "./plugins/sourcecoop",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Search and download satellite imagery from Microsoft Planetary Computer. Browse available collections, search by bbox and time range, list assets, and download specific items.",
+      "keywords": [
+        "stac",
+        "planetary-computer",
+        "sentinel-2",
+        "satellite-imagery",
+        "search",
+        "download",
+        "collections",
+        "bbox"
+      ],
+      "name": "search-stac",
+      "source": "./plugins/search-stac",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Download Overture Maps data (buildings, places, roads, land use, water, etc.) for a bounding box. Returns a GeoDataFrame saved as GeoJSON or GeoPackage.",
+      "keywords": [
+        "overture-maps",
+        "buildings",
+        "places",
+        "roads",
+        "land-use",
+        "vector",
+        "download",
+        "geopackage"
+      ],
+      "name": "overture-data",
+      "source": "./plugins/overture-data",
+      "version": "0.1.0"
+    },
+    {
+      "description": "Run pre-trained AI models on geospatial imagery. Detect buildings, cars, ships, solar panels, agriculture fields, or use text-prompted segmentation with GroundedSAM. Requires GPU for best performance.",
+      "keywords": [
+        "object-detection",
+        "segmentation",
+        "building-footprints",
+        "grounded-sam",
+        "deep-learning",
+        "satellite-imagery",
+        "geoai",
+        "pytorch"
+      ],
+      "name": "detect-objects",
+      "source": "./plugins/detect-objects",
+      "version": "0.1.0"
     }
   ]
 }
