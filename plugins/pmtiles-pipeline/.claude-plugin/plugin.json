@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "Build a global PMTiles archive from raster predictions or any large vector dataset on a single fat node. Covers raster\u2192polygon\u2192geoparquet\u2192FlatGeobuf\u2192sharded tippecanoe\u2192tile-join, with profiling, error recovery, and I/O-aware staging. Use when the user asks to vectorize raster predictions, polygonize change layers, build PMTiles at over 100M-feature scale, profile tippecanoe, decide tippecanoe flags, choose between tippecanoe / planetiler / pmtiles merge, or speed up a slow pmtiles build.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "pmtiles",
+    "tippecanoe",
+    "flatgeobuf",
+    "vector-tiles",
+    "polygonize",
+    "tile-join",
+    "geoparquet",
+    "maplibre"
+  ],
+  "license": "Apache-2.0",
+  "name": "pmtiles-pipeline",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

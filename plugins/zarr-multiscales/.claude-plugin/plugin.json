@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "Build GeoZarr multiscale pyramids (overviews) into existing Zarr stores for tile/web streaming \u2014 choosing a resampling operator that respects the data's semantics (probability simplex, categorical, continuous), cascading levels, striping work across batch workers or dask without losing shards, and verifying completeness. Use when adding overviews/pyramids/multiscales to a Zarr or GeoZarr store, downsampling ML prediction rasters, or debugging a pyramid with missing or wrong shards.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "zarr",
+    "geozarr",
+    "multiscales",
+    "pyramids",
+    "overviews",
+    "resampling",
+    "downsampling",
+    "sharding"
+  ],
+  "license": "Apache-2.0",
+  "name": "zarr-multiscales",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

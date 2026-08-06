@@ -26,8 +26,10 @@ dev = [
 [tool.ruff]
 target-version = "py313"
 line-length = 100
-force-exclude = true
+# skill scripts are portable reference material, not project code
+extend-exclude = [ "plugins", "skills" ]
 
+force-exclude = true
 lint.extend-select = [
   "ANN",
   "B",
@@ -87,6 +89,9 @@ lint.per-file-ignores."tests/**" = [
 
 [tool.pytest.ini_options]
 testpaths = [ "tests" ]
+
+[tool.ty.src]
+exclude = [ "plugins", "skills" ]
 
 [tool.uv]
 package = false

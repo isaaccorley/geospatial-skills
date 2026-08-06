@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "Parallelize large-scale geospatial operations on a single fat node \u2014 tile-edge dissolve, polygon elimination, polygonize, spatial joins, reprojection, simplification \u2014 at national/continental scale (10\u2013100M polygons). Use when speeding up or designing a geospatial batch process, or as a pre-flight checklist for known failure modes (DuckDB GEOS segfaults, topology exceptions, int64 overflow, NFS thrashing).",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "parallel",
+    "duckdb",
+    "shapely",
+    "strtree",
+    "geoparquet",
+    "spatial-join",
+    "dissolve",
+    "polygonize",
+    "hpc"
+  ],
+  "license": "Apache-2.0",
+  "name": "parallel-geospatial",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}

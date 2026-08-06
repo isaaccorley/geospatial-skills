@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Isaac Corley"
+  },
+  "description": "Download PlanetScope imagery at scale (hundreds to 100k+ AOIs) via the Planet Python SDK v2. Covers search/activate/extract phases, COG /vsicurl/ vs Orders API, GDAL config for signed URLs, retry logic, concurrency budgets, and Planet-side gotchas (broken activations, cold-storage thaw tails, dead assets). Use when downloading at scale, hitting 429s or stuck activations, choosing Orders API vs COG reads, or designing a resumable batch Planet pipeline.",
+  "homepage": "https://isaac.earth/geospatial-skills/",
+  "keywords": [
+    "planet",
+    "planetscope",
+    "satellite-imagery",
+    "cog",
+    "vsicurl",
+    "bulk-download",
+    "retry",
+    "gdal"
+  ],
+  "license": "Apache-2.0",
+  "name": "planet-bulk-download",
+  "repository": "https://github.com/isaaccorley/geospatial-skills",
+  "version": "0.1.0"
+}
