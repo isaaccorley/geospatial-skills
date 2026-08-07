@@ -88,15 +88,15 @@ COUNT=0
 
 for COLLECTION_DIR in */; do
     COLLECTION_DIR="${COLLECTION_DIR%/}"
-    
+
     # Skip if missing required files
     PMTILES_FILE=$(ls "$COLLECTION_DIR"/*.pmtiles 2>/dev/null | head -1) || continue
     [ -f "$COLLECTION_DIR/styles/default.json" ] || continue
     [ -f "$COLLECTION_DIR/collection.json" ] || continue
-    
+
     PMTILES_PATH=$(realpath "$PMTILES_FILE")
     PMTILES_NAME=$(basename "$PMTILES_FILE" .pmtiles)
-    
+
     # Extract bbox from collection.json
     BBOX=$(python3 -c "
 import json
@@ -104,7 +104,7 @@ c = json.load(open('$COLLECTION_DIR/collection.json'))
 bbox = c['extent']['spatial']['bbox'][0]
 print(f'{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}')
 ")
-    
+
     # Build render-ready style (preserves original styles/default.json exactly)
     python3 << PYSTYLE
 import json
@@ -152,19 +152,19 @@ style['layers'] = layers
 with open('$COLLECTION_DIR/.render-style.json', 'w') as f:
     json.dump(style, f)
 PYSTYLE
-    
+
     # Render thumbnail
     OUTPUT_FILE="$COLLECTION_DIR/${PMTILES_NAME}.thumb.${OUTPUT_FORMAT}"
-    
+
     curl -s -X POST \
         "http://localhost:$PORT/clip.${OUTPUT_FORMAT}?bbox=${BBOX}&size=${SIZE}&quality=${QUALITY}" \
         -H "Content-Type: application/json" \
         -d "{\"style\": $(cat "$COLLECTION_DIR/.render-style.json")}" \
         -o "$OUTPUT_FILE"
-    
+
     # Cleanup temp file
     rm -f "$COLLECTION_DIR/.render-style.json"
-    
+
     # Verify output (100 byte threshold handles edge cases with tiny bboxes)
     if [ -f "$OUTPUT_FILE" ] && [ $(stat -c%s "$OUTPUT_FILE") -gt 100 ]; then
         echo "✓ $COLLECTION_DIR → $(basename $OUTPUT_FILE) ($(stat -c%s "$OUTPUT_FILE") bytes)"

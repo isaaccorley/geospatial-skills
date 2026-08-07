@@ -9,8 +9,8 @@ upstream:
     href: https://github.com/portolan-sdi/portolan-skills
   - label: portolan-sdi/portolan-spec
     href: https://github.com/portolan-sdi/portolan-spec
-license: "Apache-2.0 (upstream: portolan-sdi/portolan-skills)"
-requires: "<code>portolan-cli</code> (<code>pipx install portolan-cli</code>); cloud credentials for push/pull"
+license: 'Apache-2.0 (upstream: portolan-sdi/portolan-skills)'
+requires: <code>portolan-cli</code> (<code>pipx install portolan-cli</code>); cloud credentials for push/pull
 summary: >-
   Full command reference for the Portolan CLI, which publishes and manages
   cloud-native geospatial catalogs as static files &mdash; GeoParquet, COG,
@@ -19,12 +19,12 @@ summary: >-
   collection SemVer versioning, and a consistent <code>--json</code> output
   envelope for agents.
 features:
-  - "Initialize and scan catalogs: <code>portolan init --auto</code>, <code>portolan scan --json</code>"
-  - "Validate and auto-convert to cloud-native formats with <code>portolan check --fix</code> (vectors &rarr; GeoParquet, rasters &rarr; COG)"
-  - "Git-like remote workflow &mdash; <code>push</code>, <code>pull</code>, <code>sync</code>, <code>clone</code>, <code>status</code> against s3://, gs://, Azure"
-  - "Partition large GeoParquet and extract from ArcGIS/WFS services"
-  - "Generate metadata templates, READMEs, and STAC-GeoParquet <code>items.parquet</code> per collection"
-  - "Per-collection semantic versioning with SHA-256 checksums in <code>versions.json</code>"
+  - 'Initialize and scan catalogs: <code>portolan init --auto</code>, <code>portolan scan --json</code>'
+  - Validate and auto-convert to cloud-native formats with <code>portolan check --fix</code> (vectors &rarr; GeoParquet, rasters &rarr; COG)
+  - Git-like remote workflow &mdash; <code>push</code>, <code>pull</code>, <code>sync</code>, <code>clone</code>, <code>status</code> against s3://, gs://, Azure
+  - Partition large GeoParquet and extract from ArcGIS/WFS services
+  - Generate metadata templates, READMEs, and STAC-GeoParquet <code>items.parquet</code> per collection
+  - Per-collection semantic versioning with SHA-256 checksums in <code>versions.json</code>
 example_html: |
   <span class="com"># initialize a new catalog in the current directory</span>
   <span class="dim">$</span> portolan init --title <span class="arg">"My Geospatial Data"</span>

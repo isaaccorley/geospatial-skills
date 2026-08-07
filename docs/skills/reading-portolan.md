@@ -9,8 +9,8 @@ upstream:
     href: https://github.com/portolan-sdi/portolan-skills
   - label: portolan-sdi/portolan-spec
     href: https://github.com/portolan-sdi/portolan-spec
-license: "Apache-2.0 (upstream: portolan-sdi/portolan-skills)"
-requires: "DuckDB 1.2+ with spatial + httpfs; <code>gpio</code> recommended; GDAL/OGR for conversions"
+license: 'Apache-2.0 (upstream: portolan-sdi/portolan-skills)'
+requires: DuckDB 1.2+ with spatial + httpfs; <code>gpio</code> recommended; GDAL/OGR for conversions
 summary: >-
   The comprehensive consumer's guide to Portolan catalogs, organized as a
   five-step workflow: navigate the STAC tree into a collection inventory,
@@ -19,12 +19,12 @@ summary: >-
   visualization section is opinionated &mdash; always PMTiles + MapLibre,
   never exported GeoJSON.
 features:
-  - "Crawl <code>catalog.json</code> child links, including nested sub-catalogs, into a full dataset inventory"
-  - "DuckDB spatial analysis: <code>ST_Intersects</code>/<code>ST_Within</code> filters, buffers, cross-collection joins, partition globs"
-  - "Remote reads via HTTP range requests and s3:// with credential setup; export to GeoParquet/GeoJSON/CSV"
-  - "<code>gpio inspect</code>/<code>check</code>/<code>extract</code> for validation and subsetting without SQL"
-  - "GDAL/OGR conversion for legacy consumers, with <code>/vsicurl/</code> and <code>/vsis3/</code> remote access"
-  - "MapLibre + PMTiles templates, shipped-style discovery via <code>portolan:styles</code>, deck.gl, TiTiler, and Potree"
+  - Crawl <code>catalog.json</code> child links, including nested sub-catalogs, into a full dataset inventory
+  - 'DuckDB spatial analysis: <code>ST_Intersects</code>/<code>ST_Within</code> filters, buffers, cross-collection joins, partition globs'
+  - Remote reads via HTTP range requests and s3:// with credential setup; export to GeoParquet/GeoJSON/CSV
+  - <code>gpio inspect</code>/<code>check</code>/<code>extract</code> for validation and subsetting without SQL
+  - GDAL/OGR conversion for legacy consumers, with <code>/vsicurl/</code> and <code>/vsis3/</code> remote access
+  - MapLibre + PMTiles templates, shipped-style discovery via <code>portolan:styles</code>, deck.gl, TiTiler, and Potree
 example_html: |
   <span class="com"># discover collections from the root STAC catalog</span>
   <span class="dim">$</span> curl -s <span class="arg">https://data.source.coop/user/catalog-name/catalog.json</span> | python3 -m json.tool

@@ -3,7 +3,7 @@
 Symptoms first — most of these produce *plausible* output, which is what makes them
 expensive. Ordered roughly by how much damage they do before you notice.
 
----
+______________________________________________________________________
 
 ## 1. Work silently lost by striping + resume in the wrong order
 
@@ -33,7 +33,7 @@ contiguous prefix, the tasks the bug drops coincide with the ones already writte
 the test passes vacuously. Model the done-set as *scattered* (each worker having
 written a prefix of its own interleaved stripe).
 
----
+______________________________________________________________________
 
 ## 2. Job success mistaken for data completeness
 
@@ -48,7 +48,7 @@ object count equals its manifest target. Since each object maps to exactly one
 required task, `count == target` is a total proof of no gaps and costs one listing.
 Make it a gate, not just a report, so a misconfigured resume cannot bypass it.
 
----
+______________________________________________________________________
 
 ## 3. Resampling that violates the data's semantics
 
@@ -65,7 +65,7 @@ to 1, label maps with classes that never existed, counts whose totals shrink.
 vectors each summing to 1 also sums to 1 by linearity. If you find yourself
 renormalizing, you probably have a masking bug (#4), not a math problem.
 
----
+______________________________________________________________________
 
 ## 4. Per-band nodata masks breaking a cross-band invariant
 
@@ -79,7 +79,7 @@ coarse levels, usually near coastlines or data edges.
 Verify by asserting the nodata mask is identical across bands (all-or-nothing per
 pixel) at every level.
 
----
+______________________________________________________________________
 
 ## 5. Nodata bleeding into real data
 
@@ -95,7 +95,7 @@ non-nodata-aware reduction.
 occupancy. If the source is 45.1% land, the top of the pyramid should be too.
 Growth means bleeding; shrinkage means loss.
 
----
+______________________________________________________________________
 
 ## 6. `np.nanmean` in a thread pool
 
@@ -109,7 +109,7 @@ thread-safe. Pyramid builds are network-bound and usually threaded.
 **Fix.** Explicit `sum/count` with `np.divide(..., where=counts > 0)`. Faster, no
 warning, and the all-nodata result is intentional rather than silenced.
 
----
+______________________________________________________________________
 
 ## 7. Half-pixel drift between levels
 
@@ -122,7 +122,7 @@ the origin per level instead of keeping it fixed.
 are cell centers (`x0 + (i + 0.5) * dx`); `GeoTransform` is pixel-edge. Assert on
 both per level.
 
----
+______________________________________________________________________
 
 ## 8. Odd dimensions handled inconsistently
 
@@ -136,7 +136,7 @@ origin.
 keeps the top-left origin. Compute each level's shape from the level-0 shape by
 repeated ceil-halving, not from the previous level's padded array.
 
----
+______________________________________________________________________
 
 ## 9. Credentials expiring mid-build
 
@@ -149,7 +149,7 @@ shorter than the job (as low as ~40 minutes).
 token is picked up. If the platform supports headless re-login, wire it in so batch
 workers renew without a TTY.
 
----
+______________________________________________________________________
 
 ## 10. Write races on partially-covered shards
 
@@ -161,7 +161,7 @@ read-modify-write.
 **Fix.** Align output shards to input shards so one task owns exactly one output
 object. Work unit = one output shard.
 
----
+______________________________________________________________________
 
 ## 11. Swallowing task exceptions
 
@@ -173,7 +173,7 @@ never retries and nothing marks the shard as missing.
 **Fix.** Let exceptions propagate — fail the worker so the stripe is requeued. The
 completeness gate then catches anything that slipped through.
 
----
+______________________________________________________________________
 
 ## 12. Monitoring that cries wolf
 

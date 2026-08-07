@@ -9,8 +9,8 @@ upstream:
     href: https://github.com/opengeos/geoai
   - label: Microsoft Planetary Computer
     href: https://planetarycomputer.microsoft.com
-license: "MIT (upstream: opengeos/geoai-skills)"
-requires: "<code>geoai-py</code>; network access to Microsoft Planetary Computer"
+license: 'MIT (upstream: opengeos/geoai-skills)'
+requires: <code>geoai-py</code>; network access to Microsoft Planetary Computer
 summary: >-
   Drives Microsoft Planetary Computer's STAC catalog through geoai's
   <code>pc_*</code> helpers. Lists and keyword-filters collections, searches a
@@ -18,11 +18,11 @@ summary: >-
   assets and bands, and downloads matched items to a local directory with size
   reporting.
 features:
-  - "Collection browsing via <code>geoai.pc_collection_list(filter_by=...)</code>"
-  - "Item search via <code>geoai.pc_stac_search</code> with bbox, <code>YYYY-MM-DD/YYYY-MM-DD</code> ranges, and limits"
-  - "Per-item asset and band listing via <code>geoai.pc_item_asset_list</code>"
-  - "Bulk download via <code>geoai.pc_stac_download</code> with per-file sizes"
-  - "Error playbook for bad collection names (closest-match suggestion) and empty result sets"
+  - Collection browsing via <code>geoai.pc_collection_list(filter_by=...)</code>
+  - Item search via <code>geoai.pc_stac_search</code> with bbox, <code>YYYY-MM-DD/YYYY-MM-DD</code> ranges, and limits
+  - Per-item asset and band listing via <code>geoai.pc_item_asset_list</code>
+  - Bulk download via <code>geoai.pc_stac_download</code> with per-file sizes
+  - Error playbook for bad collection names (closest-match suggestion) and empty result sets
 example_html: |
   <span class="com"># what collections exist</span>
   <span class="dim">$</span> python3 -c <span class="arg">"import geoai; print(geoai.pc_collection_list(filter_by='sentinel'))"</span>
