@@ -16,6 +16,10 @@ extra_css:
 
 extra_javascript:
   - javascripts/install.js
+  - javascripts/theme.js
+
+hooks:
+  - hooks/skill_downloads.py
 
 nav:
   - Home: index.md

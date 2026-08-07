@@ -4,7 +4,62 @@
   --ink-2: oklch(0.78 0.008 160); --ink-3: oklch(0.55 0.01 160);
   --line: oklch(1 0 0 / 0.07); --accent: oklch(0.80 0.16 155);
   --accent-dim: oklch(0.80 0.16 155 / 0.18);
+  --accent-wash: oklch(0.80 0.16 155 / 0.06);
+  --accent-soft: oklch(0.80 0.16 155 / 0.3);
+  --panel: oklch(0.13 0.01 160 / 0.6);
+  --panel-strong: oklch(0.13 0.01 160 / 0.7);
+  --panel-hover: oklch(0.13 0.01 160 / 0.4);
+  --underline: oklch(1 0 0 / 0.15);
+  --globe-hi: oklch(0.32 0.07 155 / 0.6);
+  --globe-lo: oklch(0.18 0.02 160 / 0.9);
+  --globe-ring: oklch(0.80 0.16 155 / 0.25);
+  --globe-border: oklch(0.80 0.16 155 / 0.4);
+  --globe-glow: oklch(0.80 0.16 155 / 0.15);
+  --globe-shade: oklch(0 0 0 / 0.3);
+  --globe-sheen: oklch(0.80 0.16 155 / 0.08);
   --m: "JetBrains Mono", monospace; --s: "Inter Tight", sans-serif;
+}
+
+/* Light theme — explicit choice, or OS preference when no choice stored */
+:root[data-theme="light"] {
+  --bg: oklch(0.975 0.004 160); --ink: oklch(0.24 0.012 160);
+  --ink-2: oklch(0.42 0.012 160); --ink-3: oklch(0.56 0.01 160);
+  --line: oklch(0 0 0 / 0.09); --accent: oklch(0.53 0.14 155);
+  --accent-dim: oklch(0.53 0.14 155 / 0.3);
+  --accent-wash: oklch(0.53 0.14 155 / 0.07);
+  --accent-soft: oklch(0.53 0.14 155 / 0.4);
+  --panel: oklch(0.93 0.007 160 / 0.55);
+  --panel-strong: oklch(0.92 0.008 160 / 0.7);
+  --panel-hover: oklch(0.93 0.007 160 / 0.4);
+  --underline: oklch(0 0 0 / 0.2);
+  --globe-hi: oklch(0.78 0.11 155 / 0.75);
+  --globe-lo: oklch(0.93 0.015 160 / 0.9);
+  --globe-ring: oklch(0.53 0.14 155 / 0.35);
+  --globe-border: oklch(0.53 0.14 155 / 0.5);
+  --globe-glow: oklch(0.53 0.14 155 / 0.18);
+  --globe-shade: oklch(0 0 0 / 0.12);
+  --globe-sheen: oklch(0.53 0.14 155 / 0.12);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) {
+    --bg: oklch(0.975 0.004 160); --ink: oklch(0.24 0.012 160);
+    --ink-2: oklch(0.42 0.012 160); --ink-3: oklch(0.56 0.01 160);
+    --line: oklch(0 0 0 / 0.09); --accent: oklch(0.53 0.14 155);
+    --accent-dim: oklch(0.53 0.14 155 / 0.3);
+    --accent-wash: oklch(0.53 0.14 155 / 0.07);
+    --accent-soft: oklch(0.53 0.14 155 / 0.4);
+    --panel: oklch(0.93 0.007 160 / 0.55);
+    --panel-strong: oklch(0.92 0.008 160 / 0.7);
+    --panel-hover: oklch(0.93 0.007 160 / 0.4);
+    --underline: oklch(0 0 0 / 0.2);
+    --globe-hi: oklch(0.78 0.11 155 / 0.75);
+    --globe-lo: oklch(0.93 0.015 160 / 0.9);
+    --globe-ring: oklch(0.53 0.14 155 / 0.35);
+    --globe-border: oklch(0.53 0.14 155 / 0.5);
+    --globe-glow: oklch(0.53 0.14 155 / 0.18);
+    --globe-shade: oklch(0 0 0 / 0.12);
+    --globe-sheen: oklch(0.53 0.14 155 / 0.12);
+  }
 }
 
 /* Hide all mkdocs-material chrome — pages render fully custom */
@@ -24,11 +79,11 @@ body { font-family: var(--m); font-size: 13px; line-height: 1.55; -webkit-font-s
 
 /* Header */
 .head{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:36px}
-.globe-mini{width:36px;height:36px;border-radius:50%;border:1px solid oklch(0.80 0.16 155 / 0.4);position:relative;flex-shrink:0;
-  background:radial-gradient(circle at 35% 30%, oklch(0.32 0.07 155 / 0.6), oklch(0.18 0.02 160 / 0.9) 70%);
-  box-shadow:0 0 12px oklch(0.80 0.16 155 / 0.15), inset -3px -4px 8px oklch(0 0 0 / 0.3), inset 2px 3px 6px oklch(0.80 0.16 155 / 0.08);
+.globe-mini{width:36px;height:36px;border-radius:50%;border:1px solid var(--globe-border);position:relative;flex-shrink:0;
+  background:radial-gradient(circle at 35% 30%, var(--globe-hi), var(--globe-lo) 70%);
+  box-shadow:0 0 12px var(--globe-glow), inset -3px -4px 8px var(--globe-shade), inset 2px 3px 6px var(--globe-sheen);
   overflow:hidden;text-decoration:none;display:block}
-.globe-mini::before,.globe-mini::after{content:"";position:absolute;border:0.5px solid oklch(0.80 0.16 155 / 0.25);border-radius:50%;inset:0;pointer-events:none}
+.globe-mini::before,.globe-mini::after{content:"";position:absolute;border:0.5px solid var(--globe-ring);border-radius:50%;inset:0;pointer-events:none}
 .globe-mini::before{transform:scaleY(0.35)}
 .globe-mini::after{transform:scaleX(0.35)}
 .brand{font-size:11.5px;text-decoration:none;color:inherit}
@@ -36,6 +91,11 @@ body { font-family: var(--m); font-size: 13px; line-height: 1.55; -webkit-font-s
 .head .meta{margin-left:auto;color:var(--ink-3);font-size:10.5px;display:flex;gap:14px;align-items:center}
 .head .meta a{color:var(--ink-2);text-decoration:none}
 .head .meta a:hover{color:var(--accent)}
+
+/* Theme toggle */
+.theme-toggle{background:transparent;border:1px solid var(--line);color:var(--ink-2);font-family:inherit;font-size:11px;
+  width:24px;height:24px;border-radius:50%;cursor:pointer;line-height:1;padding:0}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
 
 /* Breadcrumb (detail pages) */
 .crumb{font-size:10.5px;color:var(--ink-3);letter-spacing:0.06em;margin-bottom:14px;display:flex;gap:8px;align-items:baseline}
@@ -59,13 +119,15 @@ body { font-family: var(--m); font-size: 13px; line-height: 1.55; -webkit-font-s
 .sec{color:var(--ink-3);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;margin:36px 0 12px;display:flex;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .sec .accent{color:var(--accent)}
 .sec:first-of-type{margin-top:0}
+.sec a.dl{color:var(--ink-2);text-decoration:none;letter-spacing:0.08em}
+.sec a.dl:hover{color:var(--accent)}
 
 /* Install block */
-.install{margin-bottom:32px;border:1px solid var(--line);border-radius:6px;background:oklch(0.13 0.01 160 / 0.6);overflow:hidden}
+.install{margin-bottom:32px;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow:hidden}
 .install .tabs{display:flex;border-bottom:1px solid var(--line)}
 .install .tabs button{flex:1;background:transparent;border:0;color:var(--ink-3);padding:9px 12px;font-family:inherit;font-size:10.5px;cursor:pointer;letter-spacing:0.06em;border-right:1px solid var(--line);transition:all 150ms}
 .install .tabs button:last-child{border-right:0}
-.install .tabs button.on{color:var(--accent);background:oklch(0.80 0.16 155 / 0.06)}
+.install .tabs button.on{color:var(--accent);background:var(--accent-wash)}
 .install .cmd{display:flex;align-items:center;gap:14px;padding:14px 16px}
 .install .cmd .line{flex:1;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
 .install .cmd .dim{color:var(--ink-3);margin-right:8px}
@@ -91,7 +153,7 @@ body { font-family: var(--m); font-size: 13px; line-height: 1.55; -webkit-font-s
 .features li::before{content:"+";color:var(--accent);font-weight:500;flex:0 0 6px}
 
 /* Code blocks (detail) */
-pre.code{background:oklch(0.13 0.01 160 / 0.7);border:1px solid var(--line);border-radius:6px;padding:14px 16px;color:var(--ink);font-size:12.5px;overflow-x:auto;margin:12px 0 24px;line-height:1.6;font-family:var(--m)}
+pre.code{background:var(--panel-strong);border:1px solid var(--line);border-radius:6px;padding:14px 16px;color:var(--ink);font-size:12.5px;overflow-x:auto;margin:12px 0 24px;line-height:1.6;font-family:var(--m)}
 pre.code .dim{color:var(--ink-3)}
 pre.code .arg{color:var(--accent)}
 pre.code .com{color:var(--ink-3);font-style:italic}
@@ -100,13 +162,13 @@ pre.code .com{color:var(--ink-3);font-style:italic}
 .meta-grid{display:grid;grid-template-columns:140px 1fr;gap:6px 18px;font-size:12px;margin:0 0 32px}
 .meta-grid dt{color:var(--ink-3);letter-spacing:0.04em}
 .meta-grid dd{color:var(--ink-2);margin:0}
-.meta-grid dd a{color:var(--ink);text-decoration:underline;text-decoration-color:oklch(1 0 0 / 0.15);text-underline-offset:3px}
+.meta-grid dd a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--underline);text-underline-offset:3px}
 .meta-grid dd a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 
 /* Detail nav (prev/next) */
 .skillnav{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:48px 0 0}
 .skillnav a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:6px;text-decoration:none;color:inherit;transition:all 150ms}
-.skillnav a:hover{border-color:oklch(0.80 0.16 155 / 0.3);background:oklch(0.13 0.01 160 / 0.4)}
+.skillnav a:hover{border-color:var(--accent-soft);background:var(--panel-hover)}
 .skillnav a .dir{color:var(--ink-3);font-size:10px;letter-spacing:0.1em;display:block;margin-bottom:4px}
 .skillnav a .name{font-family:var(--s);font-weight:500;font-size:13.5px;color:var(--ink)}
 .skillnav a:hover .dir{color:var(--accent)}
@@ -119,4 +181,4 @@ pre.code .com{color:var(--ink-3);font-style:italic}
 .foot a:hover{color:var(--accent)}
 
 /* Inline code */
-code{font-family:var(--m);background:oklch(0.13 0.01 160 / 0.6);color:var(--ink);padding:1px 5px;border-radius:3px;font-size:0.92em;border:1px solid var(--line)}
+code{font-family:var(--m);background:var(--panel);color:var(--ink);padding:1px 5px;border-radius:3px;font-size:0.92em;border:1px solid var(--line)}

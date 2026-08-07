@@ -5,6 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
 {% endblock %}
 
 {% block header %}{% endblock %}
@@ -18,7 +19,7 @@
     <a class="brand" href="."><b>geospatial</b>-skills</a>
     <div class="meta">
       <a href="{{ config.repo_url }}">github</a>
-      <a href="{{ config.repo_url }}/blob/main/LICENSE">apache-2.0</a>
+      <button class="theme-toggle" type="button" aria-label="toggle color scheme">&#9681;</button>
     </div>
   </div>
 
@@ -61,7 +62,7 @@
   <a class="row" href="skills/overture-data/"><div><div class="name">Overture Data</div><div class="desc">Download Overture Maps buildings, places, roads, and more.</div></div><div class="tag">VECTOR</div><div class="arrow">&rarr;</div></a>
   <a class="row" href="skills/detect-objects/"><div><div class="name">Detect Objects</div><div class="desc">Run pre-trained detection models on satellite and aerial imagery.</div></div><div class="tag">ML</div><div class="arrow">&rarr;</div></a>
 
-  <div class="foot"><span>Apache-2.0 &middot; isaaccorley</span><span><a href="{{ config.repo_url }}">github.com/isaaccorley/geospatial-skills</a></span></div>
+  <div class="foot"><span>isaaccorley</span><span>apache-2.0</span></div>
 </div>
 {% endblock %}
 

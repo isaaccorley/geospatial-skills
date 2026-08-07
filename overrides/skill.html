@@ -5,6 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
 {% endblock %}
 
 {% block header %}{% endblock %}
@@ -19,7 +20,7 @@
     <a class="brand" href="../../"><b>geospatial</b>-skills</a>
     <div class="meta">
       <a href="{{ config.repo_url }}">github</a>
-      <a href="{{ config.repo_url }}/blob/main/LICENSE">apache-2.0</a>
+      <button class="theme-toggle" type="button" aria-label="toggle color scheme">&#9681;</button>
     </div>
   </div>
 
@@ -35,7 +36,7 @@
   </div>
   <p class="skill-summary">{{ m.summary | safe }}</p>
 
-  <div class="sec"><span>&sect; Install</span><span class="accent">$</span></div>
+  <div class="sec"><span>&sect; Install</span><a class="dl" href="../../downloads/{{ m.install_skill }}.skill" download>download .skill &#8595;</a></div>
   <div class="install" data-skill="{{ m.install_skill }}" data-default="skills">
     <div class="tabs">
       <button data-k="skills">SKILLS.SH</button>
@@ -63,7 +64,6 @@
     {% if m.upstream %}<dt>Upstream</dt><dd>{% for u in m.upstream %}<a href="{{ u.href }}">{{ u.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
     <dt>License</dt><dd>{{ m.license | default('Apache-2.0') | safe }}</dd>
     <dt>Requires</dt><dd>{{ m.requires | safe }}</dd>
-    <dt>Source</dt><dd><a href="{{ config.repo_url }}/tree/main/skills/{{ m.install_skill }}">github.com/isaaccorley/geospatial-skills</a></dd>
   </dl>
 
   <div class="skillnav">
@@ -71,7 +71,6 @@
     {% if m.next %}<a class="next" href="../{{ m.next.slug }}/"><span class="dir">NEXT &rarr;</span><span class="name">{{ m.next.name }}</span></a>{% else %}<a class="empty" href="#"></a>{% endif %}
   </div>
 
-  <div class="foot"><span>Apache-2.0 &middot; isaaccorley</span><span><a href="{{ config.repo_url }}">github.com/isaaccorley/geospatial-skills</a></span></div>
 </div>
 {% endblock %}
 
