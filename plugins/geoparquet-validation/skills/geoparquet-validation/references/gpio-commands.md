@@ -4,6 +4,8 @@ Quick reference for the most common `gpio` commands when working with GeoParquet
 
 ## Inspection & Analysis
 
+`inspect` and `check` read only (Geo)Parquet files — for shapefile/GPKG/GeoJSON sources, convert first and inspect the output.
+
 ```bash
 # Quick overview
 gpio inspect file.parquet

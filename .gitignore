@@ -208,3 +208,4 @@ __marimo__/
 
 # macOS
 .DS_Store
+traces/

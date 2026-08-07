@@ -163,11 +163,22 @@ When you cannot or should not rewrite chunks, patch metadata only. The pattern:
 
 1. Open the root group `r+`.
 2. Create 1D `x`/`y` coord arrays sized `(NX,)` / `(NY,)`, single-chunk, float64. Fill from the GeoTransform with the cell-center +0.5 offset. Set `standard_name` / `units` / `axis` on each.
-3. On data arrays, set `grid_mapping = "spatial_ref"`. Drop any stale `coordinates: spatial_ref` that conflicts (CF allows both, but some readers get confused — pick one).
-4. On root, set `Conventions = "CF-1.8"`.
-5. Re-run `zarr.consolidate_metadata(root.store)`.
+3. On data arrays, set `grid_mapping = "spatial_ref"` and `coordinates = "spatial_ref"` (so plain `xr.open_zarr` without `decode_coords="all"` promotes it to a scalar coord). If GDAL is a target reader, also set the array-level `_CRS` attr (see gotchas below).
+4. Ensure every array declares its dimensions. **Zarr v3: zarr-python has no API to set `dimension_names` on an existing array** — edit each array's `zarr.json` document directly:
 
-Total bytes written are usually small compared with the data chunks; the coordinate arrays dominate. Always dry-run first by printing the plan, then require an explicit apply step.
+   ```python
+   for name, dims in {"data_var": ["y", "x"], "x": ["x"], "y": ["y"]}.items():
+       doc = store_path / name / "zarr.json"
+       meta = json.loads(doc.read_text())
+       meta["dimension_names"] = dims
+       doc.write_text(json.dumps(meta))
+   ```
+
+   (Zarr v2: just set `_ARRAY_DIMENSIONS` in `.zattrs` via `arr.attrs`.)
+5. On root, set `Conventions = "CF-1.8"`.
+6. Re-run `zarr.consolidate_metadata(store_path)` **as the last step, after any direct `zarr.json` edits** — consolidated metadata shadows per-array documents on read, so stale consolidation silently undoes the patch. On Zarr v3 this emits `ZarrUserWarning: Consolidated metadata is currently not part in the Zarr format 3 specification` — expected, not an error.
+
+Total bytes written are usually small compared with the data chunks; the coordinate arrays dominate. Dry-run/apply separation matters for published or shared stores; for a scratch copy, an assert-guarded single-pass patch script is fine.
 
 A re-runnable additive patch is safe; the predicate to skip is "child arrays already exist with the right shape and attrs."
 
@@ -175,13 +186,24 @@ A re-runnable additive patch is safe; the predicate to skip is "child arrays alr
 
 - **`rio.crs` is None on read.** Almost always one of: missing `grid_mapping` on the data var, missing `crs_wkt` on `spatial_ref`, or `dimension_names` not set so xarray can't find the spatial axes.
 - **Coords half a pixel off.** Cell-center vs pixel-edge confusion. See above.
-- **GDAL sees the array but no CRS.** Try `gdalinfo "ZARR:\"path/to/store.zarr\":/data_var_name"`. Inspect `spatial_ref.attrs`. WKT2 missing or malformed is the usual cause.
+- **GDAL sees the array but no CRS.** The classic GDAL Zarr driver does **not** read CF `grid_mapping` — it reads a `_CRS` attribute on the data array itself: `"_CRS": {"wkt": "<WKT2>", "projjson": {...}}`. Add it alongside `grid_mapping` whenever GDAL must open the store (GDAL ≥ 3.13 can alternatively read root `spatial:`/`proj:` attrs). rioxarray reads CF `grid_mapping`/`crs_wkt`. Patch all readers you target; know which key serves which reader.
+- **GDAL reports NoData you never set.** The Zarr array's codec-level `fill_value` (in `zarr.json`/`.zarray`) surfaces as GDAL's NoData. If 0.0 is a valid data value, author with a distinct fill (e.g. NaN for float) — this is baked in at creation and is not a metadata-only fix.
 - **xarray promotes `spatial_ref` to a data var instead of a scalar coord.** Add `coordinates: "spatial_ref"` to the data var's attrs, OR set `decode_coords="all"` on open. Pick one — both is fine in CF but doubly-listing can confuse readers.
 - **virtualizarr-built reference store has no `Conventions`.** virtualizarr emits geometry but not CF metadata. You must add it post-hoc.
 - **Negative `dy` flipped to positive.** North-up data has `dy < 0`. If you sort coords ascending you reverse the array. Keep `y` descending for north-up.
 - **Cloud/object-store paths differ by library.** S3, GCS, Azure, HTTPS, fsspec, obstore, and GDAL VSI paths use different URL forms. Verify the reader's expected path syntax instead of rewriting paths blindly.
 
 ## Validation
+
+Which reader needs which keys — patch only the rows for your target readers:
+
+| Target reader | Reads |
+|---|---|
+| rioxarray / xarray | `grid_mapping` + `crs_wkt` on `spatial_ref`, `dimension_names`/`_ARRAY_DIMENSIONS`, `coordinates` attr or `decode_coords="all"` |
+| GDAL Zarr driver (classic, all versions) | array-level `_CRS` attr; geotransform inferred from regular 1D dim arrays (requires `dimension_names`) |
+| GDAL ≥ 3.13 spatial layer | root `spatial:` / `proj:` attrs |
+
+When the Python env is spun up per-invocation (uv/pipx/conda run), heavy geo imports dominate wall time — fold patch and verification into **one** script: patch, then in the same process `xr.open_zarr(...)`, assert `da.rio.crs` is not None, and print crs/transform/bounds; follow with `gdalinfo` (no Python needed) as the second, independent check. Pre-checks (e.g. the cell-center assertion) belong inside the same patch script as a guard, not a separate run.
 
 ```bash
 # Round-trip CRS through rioxarray
